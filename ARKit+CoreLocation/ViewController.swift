@@ -38,6 +38,12 @@ class ViewController: UIViewController {
 
     var adjustNorthByTappingSidesOfScreen = false
 
+    /// A collection of the points on the map
+    var mapAnnotationViews = [MKMarkerAnnotationView]()
+
+    /// A collection of the real world points
+    var trackNodes = [LocationAnnotationNode]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,7 +72,10 @@ class ViewController: UIViewController {
             sceneLocationView.showFeaturePoints = true
         }
 
-        buildDemoData().forEach { sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0) }
+        buildDemoData().forEach {
+            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
+            trackNodes.append($0)
+        }
 
         view.addSubview(sceneLocationView)
 
@@ -74,6 +83,7 @@ class ViewController: UIViewController {
             mapView.delegate = self
             mapView.showsUserLocation = true
             mapView.alpha = 0.8
+            addMapPointAnnotations()
             view.addSubview(mapView)
 
             updateUserLocationTimer = Timer.scheduledTimer(
@@ -125,6 +135,10 @@ class ViewController: UIViewController {
         }
 
         DispatchQueue.main.async {
+            self.updateMapViewAnnotationViews()
+            self.updateMapViewAnnotations()
+            self.toggleRealWorldPoints()
+
             if let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
                 let position = self.sceneLocationView.currentScenePosition() {
                 print("")
@@ -247,8 +261,10 @@ extension ViewController: MKMapViewDelegate {
         if pointAnnotation == self.userAnnotation {
             marker.glyphImage = UIImage(named: "user")
         } else {
-            marker.markerTintColor = UIColor(hue: 0.267, saturation: 0.67, brightness: 0.77, alpha: 1.0)
+//            marker.markerTintColor = UIColor(hue: 0.267, saturation: 0.67, brightness: 0.77, alpha: 1.0)
+            marker.markerTintColor = (annotation as? CustomPointAnnotation)?.tintColor
             marker.glyphImage = UIImage(named: "compass")
+            mapAnnotationViews.append(marker)
         }
 
         return marker
@@ -309,6 +325,55 @@ private extension ViewController {
         let image = UIImage(named: imageName)!
         return LocationAnnotationNode(location: location, image: image)
     }
+
+
+    /// Adds annotations for the track to the map
+    func addMapPointAnnotations() {
+        for point in TrackService.shared.track.points {
+            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
+            mapView.addAnnotation(annotation)
+        }
+    }
+
+    /// Updates the color of all of the views for us.
+    func updateMapViewAnnotationViews() {
+        for view in mapAnnotationViews {
+            guard let annotation = view.annotation as? CustomPointAnnotation else {
+                continue
+            }
+            view.markerTintColor = annotation.tintColor
+        }
+    }
+
+    /// Updates the titles on all of the mapView annotations
+    /// NOTE: You will need to call `mapView.setNeedsDisplay()`
+    func updateMapViewAnnotations() {
+        for annotation in mapView.annotations {
+            guard let customAnnotation = annotation as? CustomPointAnnotation else {
+                continue
+            }
+            let title = customAnnotation.title
+            customAnnotation.title = title
+        }
+    }
+
+    /// Hides / shows all of the real world points depending on how near / far they are.
+    func toggleRealWorldPoints() {
+        guard let currentLocation = sceneLocationView.currentLocation() else {
+            return
+        }
+
+        for node in trackNodes {
+            let lastState = node.isHidden
+            let hidden = !node.location.isCloseEnough(to: currentLocation)
+            node.isHidden = hidden
+
+            if lastState != hidden {
+                print("Node \(node.location.coordinate) changed to hidden=\(hidden)")
+            }
+        }
+    }
+
 }
 
 extension DispatchQueue {
@@ -327,5 +392,57 @@ extension UIView {
         }
 
         return recursiveSubviews
+    }
+}
+
+// MARKK: - CLLocation Extension
+
+extension CLLocation {
+
+    /// Are we close enough to the other location?  This can be used to determine whether or not to show it.
+    ///
+    /// - Parameters:
+    ///   - another: The location to check the distance to
+    ///   - maxDistance: The maximum distance threshold in meters (defaults to 20).
+    func isCloseEnough(to another: CLLocation, maxDistance: CLLocationDistance = 20) -> Bool {
+        return distance(from: another) <= maxDistance
+    }
+}
+
+// MARK: - CustomPointAnnotation
+
+@available(iOS 11.0, *)
+class CustomPointAnnotation: MKPointAnnotation {
+
+    var location: CLLocation
+    var sceneLocationView: SceneLocationView
+
+    init(from location: CLLocation, locationView: SceneLocationView) {
+        self.location = location
+        self.sceneLocationView = locationView
+        super.init()
+        self.coordinate = location.coordinate
+    }
+
+    override var title: String? {
+        get {
+            guard let currentLocation = sceneLocationView.currentLocation() else {
+                return nil
+            }
+
+            let distance = Float(Int(location.distance(from: currentLocation) * 100)) / 100
+            return "\(distance) meters away"
+        }
+        set {
+            super.title = newValue
+        }
+    }
+
+    var tintColor: UIColor {
+        if let currentLocation = sceneLocationView.currentLocation(), location.isCloseEnough(to: currentLocation) {
+            return UIColor(hue: 0.267, saturation: 0.67, brightness: 0.77, alpha: 1.0)
+        } else {
+            return UIColor.red
+        }
     }
 }
