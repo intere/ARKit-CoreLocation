@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6CBF14DEA2EBB19AAEAF39 /* Pods_ARCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */; };
+		21EB7F3E99E317D7378BE085 /* Pods_ARKit_CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */; };
 		49A3FBDC1F09988100AA59C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBDB1F09988100AA59C8 /* AppDelegate.swift */; };
 		49A3FBE01F09988100AA59C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBDF1F09988100AA59C8 /* ViewController.swift */; };
 		49A3FBE51F09988100AA59C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A3FBE41F09988100AA59C8 /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 		932EF26920BE83A80052210C /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FC041F0A423800AA59C8 /* CGPoint+Extensions.swift */; };
 		932EF26A20BE83A80052210C /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D206F21F124BDD00D7D622 /* SCNNode+Extensions.swift */; };
 		D8C205D11F5B197200675E6E /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */; };
+		FE45D33ECFC1ED454B990383 /* Pods_ARCLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40679BD054B80310DB6132E9 /* Pods_ARCLTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F30CBD331CC9842BDCB4757 /* Pods-ARCLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests.release.xcconfig"; sourceTree = "<group>"; };
+		40679BD054B80310DB6132E9 /* Pods_ARCLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4901EF041F1B7D560067870D /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
 		49099E381F24BAE5007B76FD /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
 		49A3FBD81F09988100AA59C8 /* ARKit+CoreLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARKit+CoreLocation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +89,7 @@
 		49A3FC021F09BADB00AA59C8 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
 		49A3FC041F0A423800AA59C8 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		49D206F21F124BDD00D7D622 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
+		61BB72563E9FB601B7DAB68D /* Pods-ARCL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCL.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCL/Pods-ARCL.release.xcconfig"; sourceTree = "<group>"; };
 		6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKit_CoreLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932EF22220BE7E6D0052210C /* ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932EF22420BE7E6D0052210C /* ARCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCL.h; sourceTree = "<group>"; };
@@ -91,7 +97,12 @@
 		932EF22A20BE7E6E0052210C /* ARCLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		932EF23120BE7E6E0052210C /* ARCLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCLTests.swift; sourceTree = "<group>"; };
 		932EF23320BE7E6E0052210C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20CABEB5A22D37EFEED9DB8 /* Pods-ARCL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARCL/Pods-ARCL.debug.xcconfig"; sourceTree = "<group>"; };
+		B9E35BA923AF29B2D4562033 /* Pods-ARKit+CoreLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		C215C1BBCF9C76F362075A0A /* Pods-ARCLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
+		ED012E6A56D8D517693D9672 /* Pods-ARKit+CoreLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				932EF23720BE7E6E0052210C /* ARCL.framework in Frameworks */,
+				21EB7F3E99E317D7378BE085 /* Pods_ARKit_CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6CBF14DEA2EBB19AAEAF39 /* Pods_ARCL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				932EF22B20BE7E6E0052210C /* ARCL.framework in Frameworks */,
+				FE45D33ECFC1ED454B990383 /* Pods_ARCLTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +143,7 @@
 				932EF23020BE7E6E0052210C /* ARCLTests */,
 				49A3FBD91F09988100AA59C8 /* Products */,
 				F2E2E005FD78BDD52B0F8A94 /* Frameworks */,
+				E01F052B4C0019DB673C7F79 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,10 +206,25 @@
 			path = ARCLTests;
 			sourceTree = "<group>";
 		};
+		E01F052B4C0019DB673C7F79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A20CABEB5A22D37EFEED9DB8 /* Pods-ARCL.debug.xcconfig */,
+				61BB72563E9FB601B7DAB68D /* Pods-ARCL.release.xcconfig */,
+				C215C1BBCF9C76F362075A0A /* Pods-ARCLTests.debug.xcconfig */,
+				3F30CBD331CC9842BDCB4757 /* Pods-ARCLTests.release.xcconfig */,
+				B9E35BA923AF29B2D4562033 /* Pods-ARKit+CoreLocation.debug.xcconfig */,
+				ED012E6A56D8D517693D9672 /* Pods-ARKit+CoreLocation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F2E2E005FD78BDD52B0F8A94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */,
+				9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */,
+				40679BD054B80310DB6132E9 /* Pods_ARCLTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,11 +247,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49A3FBEC1F09988100AA59C8 /* Build configuration list for PBXNativeTarget "ARKit+CoreLocation" */;
 			buildPhases = (
+				57BB0AB49FCA3C7EE46AF9FA /* [CP] Check Pods Manifest.lock */,
 				49A3FBD41F09988100AA59C8 /* Sources */,
 				49A3FBD51F09988100AA59C8 /* Frameworks */,
 				49A3FBD61F09988100AA59C8 /* Resources */,
 				935FB3C020BD304200F6A081 /* Swiftlint */,
 				932EF23E20BE7E6E0052210C /* Embed Frameworks */,
+				C9ADC15292B75F94D1D3D924 /* [CP] Embed Pods Frameworks */,
+				81767E460CCDC7CE2F616097 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,10 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 932EF23D20BE7E6E0052210C /* Build configuration list for PBXNativeTarget "ARCL" */;
 			buildPhases = (
+				69E1139C631BF9E0AF6539D8 /* [CP] Check Pods Manifest.lock */,
 				932EF21D20BE7E6D0052210C /* Sources */,
 				932EF21E20BE7E6D0052210C /* Frameworks */,
 				932EF21F20BE7E6D0052210C /* Headers */,
 				932EF22020BE7E6D0052210C /* Resources */,
+				3B3C40AF070739DFA150948F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 932EF23F20BE7E6E0052210C /* Build configuration list for PBXNativeTarget "ARCLTests" */;
 			buildPhases = (
+				4BA0C3F04FE8F708C1C53D12 /* [CP] Check Pods Manifest.lock */,
 				932EF22620BE7E6E0052210C /* Sources */,
 				932EF22720BE7E6E0052210C /* Frameworks */,
 				932EF22820BE7E6E0052210C /* Resources */,
+				68EF7A76DE50D1750A8CA185 /* [CP] Embed Pods Frameworks */,
+				D9CD6229DECF17972BB3346B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +379,105 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B3C40AF070739DFA150948F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARCL/Pods-ARCL-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BA0C3F04FE8F708C1C53D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARCLTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57BB0AB49FCA3C7EE46AF9FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARKit+CoreLocation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68EF7A76DE50D1750A8CA185 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69E1139C631BF9E0AF6539D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARCL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81767E460CCDC7CE2F616097 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		935FB3C020BD304200F6A081 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +491,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		C9ADC15292B75F94D1D3D924 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GeoTrackKit/GeoTrackKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeoTrackKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CD6229DECF17972BB3346B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -538,6 +708,7 @@
 		};
 		49A3FBED1F09988100AA59C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9E35BA923AF29B2D4562033 /* Pods-ARKit+CoreLocation.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -553,6 +724,7 @@
 		};
 		49A3FBEE1F09988100AA59C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED012E6A56D8D517693D9672 /* Pods-ARKit+CoreLocation.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -568,6 +740,7 @@
 		};
 		932EF23920BE7E6E0052210C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A20CABEB5A22D37EFEED9DB8 /* Pods-ARCL.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -598,6 +771,7 @@
 		};
 		932EF23A20BE7E6E0052210C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61BB72563E9FB601B7DAB68D /* Pods-ARCL.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -628,6 +802,7 @@
 		};
 		932EF23B20BE7E6E0052210C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C215C1BBCF9C76F362075A0A /* Pods-ARCLTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -651,6 +826,7 @@
 		};
 		932EF23C20BE7E6E0052210C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F30CBD331CC9842BDCB4757 /* Pods-ARCLTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
