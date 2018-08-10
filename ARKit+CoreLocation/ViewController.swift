@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     ///Whether to show a map view
     ///The initial value is respected
-    var showMapView: Bool = false
+    var showMapView: Bool = true
 
     var centerMapOnUserLocation: Bool = true
 
@@ -287,14 +287,18 @@ private extension ViewController {
         // TODO: add a few more demo points of interest.
         // TODO: use more varied imagery.
 
-        let spaceNeedle = buildNode(latitude: 47.6205, longitude: -122.3493, altitude: 225, imageName: "pin")
-        nodes.append(spaceNeedle)
+//        let spaceNeedle = buildNode(latitude: 47.6205, longitude: -122.3493, altitude: 225, imageName: "pin")
+//        nodes.append(spaceNeedle)
+//
+//        let empireStateBuilding = buildNode(latitude: 40.7484, longitude: -73.9857, altitude: 14.3, imageName: "pin")
+//        nodes.append(empireStateBuilding)
+//
+//        let canaryWharf = buildNode(latitude: 51.504607, longitude: -0.019592, altitude: 236, imageName: "pin")
+//        nodes.append(canaryWharf)
 
-        let empireStateBuilding = buildNode(latitude: 40.7484, longitude: -73.9857, altitude: 14.3, imageName: "pin")
-        nodes.append(empireStateBuilding)
-
-        let canaryWharf = buildNode(latitude: 51.504607, longitude: -0.019592, altitude: 236, imageName: "pin")
-        nodes.append(canaryWharf)
+        TrackService.shared.track.points.forEach { (point) in
+            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "pin"))
+        }
 
         return nodes
     }
