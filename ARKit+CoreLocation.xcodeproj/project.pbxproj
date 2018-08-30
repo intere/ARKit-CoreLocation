@@ -10,12 +10,17 @@
 		0A6CBF14DEA2EBB19AAEAF39 /* Pods_ARCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */; };
 		21EB7F3E99E317D7378BE085 /* Pods_ARKit_CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */; };
 		3601DB322137239900AC554D /* GeoCodingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB312137239900AC554D /* GeoCodingTest.swift */; };
+		3601DB3421384CE800AC554D /* GeoCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB3321384CE800AC554D /* GeoCodeService.swift */; };
+		3601DB37213853F300AC554D /* GeoCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB36213853F300AC554D /* GeoCodeResult.swift */; };
+		362AC19721386AB40011D112 /* ARKit_CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC19621386AB40011D112 /* ARKit_CoreLocationTests.swift */; };
+		362AC19E21386B0A0011D112 /* GeoCodeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB3821385D1600AC554D /* GeoCodeServiceTest.swift */; };
 		36A32F8E211E540A00A1755A /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A32F8C211E540A00A1755A /* TrackService.swift */; };
 		36A32F90211E542A00A1755A /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A32F8F211E542A00A1755A /* block.json */; };
 		49A3FBDC1F09988100AA59C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBDB1F09988100AA59C8 /* AppDelegate.swift */; };
 		49A3FBE01F09988100AA59C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBDF1F09988100AA59C8 /* ViewController.swift */; };
 		49A3FBE51F09988100AA59C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A3FBE41F09988100AA59C8 /* Assets.xcassets */; };
 		49A3FBE81F09988100AA59C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A3FBE61F09988100AA59C8 /* LaunchScreen.storyboard */; };
+		59217D81C0B99395D97BFD15 /* Pods_ARKit_CoreLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958E6106ACDD5B4F10A51604 /* Pods_ARKit_CoreLocationTests.framework */; };
 		932EF22B20BE7E6E0052210C /* ARCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932EF22220BE7E6D0052210C /* ARCL.framework */; };
 		932EF23220BE7E6E0052210C /* ARCLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EF23120BE7E6E0052210C /* ARCLTests.swift */; };
 		932EF23420BE7E6E0052210C /* ARCL.h in Headers */ = {isa = PBXBuildFile; fileRef = 932EF22420BE7E6D0052210C /* ARCL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		362AC19921386AB40011D112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49A3FBD01F09988100AA59C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49A3FBD71F09988100AA59C8;
+			remoteInfo = "ARKit+CoreLocation";
+		};
 		932EF22C20BE7E6E0052210C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49A3FBD01F09988100AA59C8 /* Project object */;
@@ -75,8 +87,15 @@
 
 /* Begin PBXFileReference section */
 		3601DB312137239900AC554D /* GeoCodingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingTest.swift; sourceTree = "<group>"; };
+		3601DB3321384CE800AC554D /* GeoCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodeService.swift; sourceTree = "<group>"; };
+		3601DB36213853F300AC554D /* GeoCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodeResult.swift; sourceTree = "<group>"; };
+		3601DB3821385D1600AC554D /* GeoCodeServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodeServiceTest.swift; sourceTree = "<group>"; };
+		362AC19421386AB40011D112 /* ARKit+CoreLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ARKit+CoreLocationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		362AC19621386AB40011D112 /* ARKit_CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_CoreLocationTests.swift; sourceTree = "<group>"; };
+		362AC19821386AB40011D112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A32F8C211E540A00A1755A /* TrackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
 		36A32F8F211E542A00A1755A /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
+		397B5CC11FCEB392D7E8F32A /* Pods-ARKit+CoreLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocationTests/Pods-ARKit+CoreLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F30CBD331CC9842BDCB4757 /* Pods-ARCLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests.release.xcconfig"; sourceTree = "<group>"; };
 		40679BD054B80310DB6132E9 /* Pods_ARCLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4901EF041F1B7D560067870D /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
@@ -103,15 +122,25 @@
 		932EF22A20BE7E6E0052210C /* ARCLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		932EF23120BE7E6E0052210C /* ARCLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCLTests.swift; sourceTree = "<group>"; };
 		932EF23320BE7E6E0052210C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		958E6106ACDD5B4F10A51604 /* Pods_ARKit_CoreLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKit_CoreLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20CABEB5A22D37EFEED9DB8 /* Pods-ARCL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARCL/Pods-ARCL.debug.xcconfig"; sourceTree = "<group>"; };
 		B9E35BA923AF29B2D4562033 /* Pods-ARKit+CoreLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		C215C1BBCF9C76F362075A0A /* Pods-ARCLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARCLTests/Pods-ARCLTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
+		E9BB3BD74D38F7DF4B320A9A /* Pods-ARKit+CoreLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocationTests/Pods-ARKit+CoreLocationTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED012E6A56D8D517693D9672 /* Pods-ARKit+CoreLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		362AC19121386AB40011D112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59217D81C0B99395D97BFD15 /* Pods_ARKit_CoreLocationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A3FBD51F09988100AA59C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,10 +170,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3601DB35213853E600AC554D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3601DB36213853F300AC554D /* GeoCodeResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		362AC19521386AB40011D112 /* ARKit+CoreLocationTests */ = {
+			isa = PBXGroup;
+			children = (
+				3601DB3821385D1600AC554D /* GeoCodeServiceTest.swift */,
+				362AC19621386AB40011D112 /* ARKit_CoreLocationTests.swift */,
+				362AC19821386AB40011D112 /* Info.plist */,
+			);
+			path = "ARKit+CoreLocationTests";
+			sourceTree = "<group>";
+		};
 		36A32F8B211E540A00A1755A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				36A32F8C211E540A00A1755A /* TrackService.swift */,
+				3601DB3321384CE800AC554D /* GeoCodeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -164,6 +212,7 @@
 				932EF22320BE7E6D0052210C /* ARCL */,
 				49A3FBDA1F09988100AA59C8 /* ARKit+CoreLocation */,
 				932EF23020BE7E6E0052210C /* ARCLTests */,
+				362AC19521386AB40011D112 /* ARKit+CoreLocationTests */,
 				49A3FBD91F09988100AA59C8 /* Products */,
 				F2E2E005FD78BDD52B0F8A94 /* Frameworks */,
 				E01F052B4C0019DB673C7F79 /* Pods */,
@@ -176,6 +225,7 @@
 				49A3FBD81F09988100AA59C8 /* ARKit+CoreLocation.app */,
 				932EF22220BE7E6D0052210C /* ARCL.framework */,
 				932EF22A20BE7E6E0052210C /* ARCLTests.xctest */,
+				362AC19421386AB40011D112 /* ARKit+CoreLocationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +233,7 @@
 		49A3FBDA1F09988100AA59C8 /* ARKit+CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
+				3601DB35213853E600AC554D /* Models */,
 				36A32F8D211E540A00A1755A /* Resources */,
 				36A32F8B211E540A00A1755A /* Services */,
 				49A3FBDB1F09988100AA59C8 /* AppDelegate.swift */,
@@ -241,6 +292,8 @@
 				3F30CBD331CC9842BDCB4757 /* Pods-ARCLTests.release.xcconfig */,
 				B9E35BA923AF29B2D4562033 /* Pods-ARKit+CoreLocation.debug.xcconfig */,
 				ED012E6A56D8D517693D9672 /* Pods-ARKit+CoreLocation.release.xcconfig */,
+				397B5CC11FCEB392D7E8F32A /* Pods-ARKit+CoreLocationTests.debug.xcconfig */,
+				E9BB3BD74D38F7DF4B320A9A /* Pods-ARKit+CoreLocationTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -251,6 +304,7 @@
 				6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */,
 				9E12E620D86CE45E46ECFD54 /* Pods_ARCL.framework */,
 				40679BD054B80310DB6132E9 /* Pods_ARCLTests.framework */,
+				958E6106ACDD5B4F10A51604 /* Pods_ARKit_CoreLocationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +323,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		362AC19321386AB40011D112 /* ARKit+CoreLocationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 362AC19D21386AB40011D112 /* Build configuration list for PBXNativeTarget "ARKit+CoreLocationTests" */;
+			buildPhases = (
+				BCB18C167549DCC0B475F156 /* [CP] Check Pods Manifest.lock */,
+				362AC19021386AB40011D112 /* Sources */,
+				362AC19121386AB40011D112 /* Frameworks */,
+				362AC19221386AB40011D112 /* Resources */,
+				0A3414EA35AEB8DE93DEA59A /* [CP] Embed Pods Frameworks */,
+				6AFACE544875FB329CCE2794 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				362AC19A21386AB40011D112 /* PBXTargetDependency */,
+			);
+			name = "ARKit+CoreLocationTests";
+			productName = "ARKit+CoreLocationTests";
+			productReference = 362AC19421386AB40011D112 /* ARKit+CoreLocationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		49A3FBD71F09988100AA59C8 /* ARKit+CoreLocation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49A3FBEC1F09988100AA59C8 /* Build configuration list for PBXNativeTarget "ARKit+CoreLocation" */;
@@ -344,6 +419,11 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Project Dent";
 				TargetAttributes = {
+					362AC19321386AB40011D112 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 49A3FBD71F09988100AA59C8;
+					};
 					49A3FBD71F09988100AA59C8 = {
 						CreatedOnToolsVersion = 9.0;
 					};
@@ -374,11 +454,19 @@
 				49A3FBD71F09988100AA59C8 /* ARKit+CoreLocation */,
 				932EF22120BE7E6D0052210C /* ARCL */,
 				932EF22920BE7E6E0052210C /* ARCLTests */,
+				362AC19321386AB40011D112 /* ARKit+CoreLocationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		362AC19221386AB40011D112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A3FBD61F09988100AA59C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +494,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A3414EA35AEB8DE93DEA59A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocationTests/Pods-ARKit+CoreLocationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B3C40AF070739DFA150948F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +593,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6AFACE544875FB329CCE2794 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocationTests/Pods-ARKit+CoreLocationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81767E460CCDC7CE2F616097 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +636,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		BCB18C167549DCC0B475F156 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARKit+CoreLocationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		C9ADC15292B75F94D1D3D924 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -555,12 +691,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		362AC19021386AB40011D112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				362AC19E21386B0A0011D112 /* GeoCodeServiceTest.swift in Sources */,
+				362AC19721386AB40011D112 /* ARKit_CoreLocationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A3FBD41F09988100AA59C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D8C205D11F5B197200675E6E /* NotSupportedViewController.swift in Sources */,
+				3601DB3421384CE800AC554D /* GeoCodeService.swift in Sources */,
 				49A3FBE01F09988100AA59C8 /* ViewController.swift in Sources */,
+				3601DB37213853F300AC554D /* GeoCodeResult.swift in Sources */,
 				49A3FBDC1F09988100AA59C8 /* AppDelegate.swift in Sources */,
 				36A32F8E211E540A00A1755A /* TrackService.swift in Sources */,
 			);
@@ -595,6 +742,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		362AC19A21386AB40011D112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49A3FBD71F09988100AA59C8 /* ARKit+CoreLocation */;
+			targetProxy = 362AC19921386AB40011D112 /* PBXContainerItemProxy */;
+		};
 		932EF22D20BE7E6E0052210C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 932EF22120BE7E6D0052210C /* ARCL */;
@@ -624,6 +776,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		362AC19B21386AB40011D112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 397B5CC11FCEB392D7E8F32A /* Pods-ARKit+CoreLocationTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 268S5GJFWZ;
+				INFOPLIST_FILE = "ARKit+CoreLocationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arcpublishing.ARKit-CoreLocationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARKit+CoreLocation.app/ARKit+CoreLocation";
+			};
+			name = Debug;
+		};
+		362AC19C21386AB40011D112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9BB3BD74D38F7DF4B320A9A /* Pods-ARKit+CoreLocationTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 268S5GJFWZ;
+				INFOPLIST_FILE = "ARKit+CoreLocationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arcpublishing.ARKit-CoreLocationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARKit+CoreLocation.app/ARKit+CoreLocation";
+			};
+			name = Release;
+		};
 		49A3FBEA1F09988100AA59C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -880,6 +1070,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		362AC19D21386AB40011D112 /* Build configuration list for PBXNativeTarget "ARKit+CoreLocationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362AC19B21386AB40011D112 /* Debug */,
+				362AC19C21386AB40011D112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49A3FBD31F09988100AA59C8 /* Build configuration list for PBXProject "ARKit+CoreLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

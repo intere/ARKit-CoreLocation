@@ -21,4 +21,8 @@ target 'ARKit+CoreLocation' do
   # Pods for ARKit+CoreLocation
   pod 'GeoTrackKit'
 
+  target 'ARKit+CoreLocationTests' do
+    inherit! :search_paths
+  end
+
 end
