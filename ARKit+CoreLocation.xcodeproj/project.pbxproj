@@ -14,6 +14,10 @@
 		3601DB37213853F300AC554D /* GeoCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB36213853F300AC554D /* GeoCodeResult.swift */; };
 		362AC19721386AB40011D112 /* ARKit_CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC19621386AB40011D112 /* ARKit_CoreLocationTests.swift */; };
 		362AC19E21386B0A0011D112 /* GeoCodeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601DB3821385D1600AC554D /* GeoCodeServiceTest.swift */; };
+		362AC1A2213875570011D112 /* GeoCodeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362AC1A1213875570011D112 /* GeoCodeSearch.storyboard */; };
+		362AC1A4213876E30011D112 /* GeoCodeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC1A3213876E30011D112 /* GeoCodeSearchTableViewController.swift */; };
+		362AC1A92139D3680011D112 /* RealWorldLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC1A82139D3680011D112 /* RealWorldLocationService.swift */; };
+		362AC1AB2139D8510011D112 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC1AA2139D8510011D112 /* NotificationExtension.swift */; };
 		36A32F8E211E540A00A1755A /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A32F8C211E540A00A1755A /* TrackService.swift */; };
 		36A32F90211E542A00A1755A /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 36A32F8F211E542A00A1755A /* block.json */; };
 		49A3FBDC1F09988100AA59C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBDB1F09988100AA59C8 /* AppDelegate.swift */; };
@@ -93,6 +97,10 @@
 		362AC19421386AB40011D112 /* ARKit+CoreLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ARKit+CoreLocationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		362AC19621386AB40011D112 /* ARKit_CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_CoreLocationTests.swift; sourceTree = "<group>"; };
 		362AC19821386AB40011D112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		362AC1A1213875570011D112 /* GeoCodeSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoCodeSearch.storyboard; sourceTree = "<group>"; };
+		362AC1A3213876E30011D112 /* GeoCodeSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodeSearchTableViewController.swift; sourceTree = "<group>"; };
+		362AC1A82139D3680011D112 /* RealWorldLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealWorldLocationService.swift; sourceTree = "<group>"; };
+		362AC1AA2139D8510011D112 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		36A32F8C211E540A00A1755A /* TrackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
 		36A32F8F211E542A00A1755A /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
 		397B5CC11FCEB392D7E8F32A /* Pods-ARKit+CoreLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocationTests/Pods-ARKit+CoreLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,11 +196,37 @@
 			path = "ARKit+CoreLocationTests";
 			sourceTree = "<group>";
 		};
+		362AC19F2138735D0011D112 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				362AC1A02138735D0011D112 /* PointOfInterest */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		362AC1A02138735D0011D112 /* PointOfInterest */ = {
+			isa = PBXGroup;
+			children = (
+				362AC1A1213875570011D112 /* GeoCodeSearch.storyboard */,
+				362AC1A3213876E30011D112 /* GeoCodeSearchTableViewController.swift */,
+			);
+			path = PointOfInterest;
+			sourceTree = "<group>";
+		};
+		362AC1A5213887DF0011D112 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				362AC1AA2139D8510011D112 /* NotificationExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		36A32F8B211E540A00A1755A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				36A32F8C211E540A00A1755A /* TrackService.swift */,
 				3601DB3321384CE800AC554D /* GeoCodeService.swift */,
+				362AC1A82139D3680011D112 /* RealWorldLocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -233,6 +267,8 @@
 		49A3FBDA1F09988100AA59C8 /* ARKit+CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
+				362AC1A5213887DF0011D112 /* Extensions */,
+				362AC19F2138735D0011D112 /* Views */,
 				3601DB35213853E600AC554D /* Models */,
 				36A32F8D211E540A00A1755A /* Resources */,
 				36A32F8B211E540A00A1755A /* Services */,
@@ -474,6 +510,7 @@
 				49A3FBE81F09988100AA59C8 /* LaunchScreen.storyboard in Resources */,
 				49A3FBE51F09988100AA59C8 /* Assets.xcassets in Resources */,
 				36A32F90211E542A00A1755A /* block.json in Resources */,
+				362AC1A2213875570011D112 /* GeoCodeSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,10 +699,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/GeoTrackKit/GeoTrackKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeoTrackKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,11 +744,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C205D11F5B197200675E6E /* NotSupportedViewController.swift in Sources */,
+				362AC1A4213876E30011D112 /* GeoCodeSearchTableViewController.swift in Sources */,
 				3601DB3421384CE800AC554D /* GeoCodeService.swift in Sources */,
+				362AC1AB2139D8510011D112 /* NotificationExtension.swift in Sources */,
 				49A3FBE01F09988100AA59C8 /* ViewController.swift in Sources */,
 				3601DB37213853F300AC554D /* GeoCodeResult.swift in Sources */,
 				49A3FBDC1F09988100AA59C8 /* AppDelegate.swift in Sources */,
 				36A32F8E211E540A00A1755A /* TrackService.swift in Sources */,
+				362AC1A92139D3680011D112 /* RealWorldLocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

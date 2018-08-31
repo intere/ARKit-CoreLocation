@@ -6,10 +6,11 @@
 //  Copyright © 2017 Project Dent. All rights reserved.
 //
 
-import UIKit
-import SceneKit
-import MapKit
 import ARCL
+import Cartography
+import MapKit
+import SceneKit
+import UIKit
 
 @available(iOS 11.0, *)
 class ViewController: UIViewController {
@@ -44,6 +45,8 @@ class ViewController: UIViewController {
     /// A collection of the real world points
     var trackNodes = [LocationAnnotationNode]()
 
+    let button = UIButton(type: UIButtonType.custom)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +55,16 @@ class ViewController: UIViewController {
         infoLabel.textColor = UIColor.white
         infoLabel.numberOfLines = 0
         sceneLocationView.addSubview(infoLabel)
+
+        button.setTitle("🏠", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        button.addTarget(self, action: #selector(tappedFindLocation), for: .touchUpInside)
+        sceneLocationView.addSubview(button)
+
+        constrain(sceneLocationView, button) { v, b in
+            b.top == v.top + 28
+            b.right == v.right - 8
+        }
 
         updateInfoLabelTimer = Timer.scheduledTimer(
             timeInterval: 0.1,
@@ -212,6 +225,14 @@ class ViewController: UIViewController {
         }
     }
 
+    @objc
+    func tappedFindLocation() {
+        guard let vc = UIStoryboard(name: "GeoCodeSearch", bundle: nil).instantiateInitialViewController() else {
+            return print("No initial vc to show")
+        }
+        present(vc, animated: true, completion: nil)
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 
@@ -244,6 +265,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - MKMapViewDelegate
+
 @available(iOS 11.0, *)
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -272,6 +294,7 @@ extension ViewController: MKMapViewDelegate {
 }
 
 // MARK: - SceneLocationViewDelegate
+
 @available(iOS 11.0, *)
 extension ViewController: SceneLocationViewDelegate {
     func sceneLocationViewDidAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
@@ -295,6 +318,7 @@ extension ViewController: SceneLocationViewDelegate {
 }
 
 // MARK: - Data Helpers
+
 @available(iOS 11.0, *)
 private extension ViewController {
     func buildDemoData() -> [LocationAnnotationNode] {
@@ -325,7 +349,6 @@ private extension ViewController {
         let image = UIImage(named: imageName)!
         return LocationAnnotationNode(location: location, image: image)
     }
-
 
     /// Adds annotations for the track to the map
     func addMapPointAnnotations() {

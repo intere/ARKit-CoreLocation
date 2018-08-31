@@ -14,6 +14,8 @@ class GeoCodeResult {
     let locationString: String
     let location: CLLocationCoordinate2D
     let displayLocation: CLLocationCoordinate2D
+    let city: String
+    let state: String
 
     init?(fromMap map: [String: Any], locationString: String) {
         guard let latLng = map["latLng"] as? [String: Any],
@@ -27,5 +29,35 @@ class GeoCodeResult {
         self.locationString = locationString
         location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         displayLocation = CLLocationCoordinate2D(latitude: displayLat, longitude: displayLon)
+        city = GeoCodeResult.getCity(from: map)
+        state = GeoCodeResult.getState(from: map)
+    }
+}
+
+// MARK: - Implementation
+
+extension GeoCodeResult {
+
+    static func getCity(from map: [String: Any]) -> String {
+
+        for i in 1...6 {
+            guard (map["adminArea\(i)Type"] as? String) == "City" else {
+                continue
+            }
+            return map["adminArea\(i)"] as? String ?? ""
+        }
+
+        return ""
+    }
+
+    static func getState(from map: [String: Any]) -> String {
+        for i in 1...6 {
+            guard (map["adminArea\(i)Type"] as? String) == "State" else {
+                continue
+            }
+            return map["adminArea\(i)"] as? String ?? ""
+        }
+
+        return ""
     }
 }

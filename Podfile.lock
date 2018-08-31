@@ -1,12 +1,15 @@
 PODS:
+  - Cartography (3.0.2)
   - GeoTrackKit (0.2.0)
 
 DEPENDENCIES:
+  - Cartography
   - GeoTrackKit
 
 SPEC CHECKSUMS:
+  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
   GeoTrackKit: 71a25d761d1f059eb5fe1d4177b9219c28e6d314
 
-PODFILE CHECKSUM: e8e620005fa1dd14742d6fa1b7da5e3801cde5f4
+PODFILE CHECKSUM: 88e491f5d2d52ba78a1eb1e67a34f9f2a707e065
 
 COCOAPODS: 1.4.0
