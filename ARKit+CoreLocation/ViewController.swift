@@ -28,6 +28,8 @@ class ViewController: UIViewController {
 
     var centerMapOnUserLocation: Bool = true
 
+    var verbose = false
+
     ///Whether to display some debugging data
     ///This currently displays the coordinate of the best location estimate
     ///The initial value is respected
@@ -96,6 +98,7 @@ class ViewController: UIViewController {
             mapView.delegate = self
             mapView.showsUserLocation = true
             mapView.alpha = 0.8
+            // TODO: Do this later
             addMapPointAnnotations()
             view.addSubview(mapView)
 
@@ -106,6 +109,8 @@ class ViewController: UIViewController {
                 userInfo: nil,
                 repeats: true)
         }
+
+        Notification.ArClExample.locationsUpdated.addObserver(observer: self, selector: #selector(renderLocations))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -142,7 +147,8 @@ class ViewController: UIViewController {
             height: self.view.frame.size.height / 2)
     }
 
-    @objc func updateUserLocation() {
+    @objc
+    func updateUserLocation() {
         guard let currentLocation = sceneLocationView.currentLocation() else {
             return
         }
@@ -152,7 +158,7 @@ class ViewController: UIViewController {
             self.updateMapViewAnnotations()
             self.toggleRealWorldPoints()
 
-            if let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
+            if self.verbose, let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
                 let position = self.sceneLocationView.currentScenePosition() {
                 print("")
                 print("Fetch current location")
@@ -203,7 +209,8 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc func updateInfoLabel() {
+    @objc
+    func updateInfoLabel() {
         if let position = sceneLocationView.currentScenePosition() {
             infoLabel.text = "x: \(String(format: "%.2f", position.x)), y: \(String(format: "%.2f", position.y)), z: \(String(format: "%.2f", position.z))\n"
         }
@@ -231,6 +238,23 @@ class ViewController: UIViewController {
             return print("No initial vc to show")
         }
         present(vc, animated: true, completion: nil)
+    }
+
+    @objc
+    func renderLocations() {
+        trackNodes.forEach { node in
+            sceneLocationView.removeLocationNode(locationNode: node)
+        }
+        trackNodes.removeAll()
+
+        buildDemoData().forEach {
+            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
+            trackNodes.append($0)
+        }
+
+        if showMapView {
+            addMapPointAnnotations()
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -298,11 +322,16 @@ extension ViewController: MKMapViewDelegate {
 @available(iOS 11.0, *)
 extension ViewController: SceneLocationViewDelegate {
     func sceneLocationViewDidAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
-        print("add scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
+
+        if verbose {
+            print("add scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
+        }
     }
 
     func sceneLocationViewDidRemoveSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
-        print("remove scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
+        if verbose {
+            print("remove scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
+        }
     }
 
     func sceneLocationViewDidConfirmLocationOfNode(sceneLocationView: SceneLocationView, node: LocationNode) {
@@ -321,6 +350,7 @@ extension ViewController: SceneLocationViewDelegate {
 
 @available(iOS 11.0, *)
 private extension ViewController {
+
     func buildDemoData() -> [LocationAnnotationNode] {
         var nodes: [LocationAnnotationNode] = []
 
@@ -336,9 +366,12 @@ private extension ViewController {
 //        let canaryWharf = buildNode(latitude: 51.504607, longitude: -0.019592, altitude: 236, imageName: "pin")
 //        nodes.append(canaryWharf)
 
-        TrackService.shared.track.points.forEach { (point) in
-            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "pin"))
-        }
+        RealWorldLocationService.shared.worldPoints.forEach { nodes.append($0.locationNode) }
+
+        // TODO: Reenable this
+//        TrackService.shared.track.points.forEach { (point) in
+//            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "pin"))
+//        }
 
         return nodes
     }
@@ -352,10 +385,16 @@ private extension ViewController {
 
     /// Adds annotations for the track to the map
     func addMapPointAnnotations() {
-        for point in TrackService.shared.track.points {
-            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
+        mapView.removeAnnotations(mapView.annotations)
+        for node in trackNodes {
+            let annotation = CustomPointAnnotation(from: node.location, locationView: sceneLocationView)
             mapView.addAnnotation(annotation)
         }
+        // TODO show / hide track?
+//        for point in TrackService.shared.track.points {
+//            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
+//            mapView.addAnnotation(annotation)
+//        }
     }
 
     /// Updates the color of all of the views for us.
@@ -387,26 +426,31 @@ private extension ViewController {
         }
 
         for node in trackNodes {
-            let lastState = node.isHidden
-            let hidden = !node.location.isCloseEnough(to: currentLocation)
-            node.isHidden = hidden
-
-            if lastState != hidden {
-                print("Node \(node.location.coordinate) changed to hidden=\(hidden)")
-            }
+            node.isHidden = false
         }
+
+//        for node in trackNodes {
+//            let lastState = node.isHidden
+//            let hidden = !node.location.isCloseEnough(to: currentLocation)
+//            node.isHidden = hidden
+//
+//            if lastState != hidden {
+//                print("Node \(node.location.coordinate) changed to hidden=\(hidden)")
+//            }
+//        }
     }
 
 }
 
 extension DispatchQueue {
+
     func asyncAfter(timeInterval: TimeInterval, execute: @escaping () -> Void) {
-        self.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(timeInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: execute)
+        asyncAfter(deadline: .now() + timeInterval, execute: execute)
     }
 }
 
 extension UIView {
+
     func recursiveSubviews() -> [UIView] {
         var recursiveSubviews = self.subviews
 
@@ -416,6 +460,7 @@ extension UIView {
 
         return recursiveSubviews
     }
+
 }
 
 // MARKK: - CLLocation Extension
