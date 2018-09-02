@@ -45,6 +45,9 @@ class ViewController: UIViewController {
     /// A collection of the real world points
     var trackNodes = [LocationAnnotationNode]()
 
+    /// Should we render the track or not?
+    var renderTrack = false
+
     let manageLocationsButton = UIButton(type: .custom)
     let addCurrentLocationButton = UIButton(type: .custom)
     let resetButton = UIButton(type: .custom)
@@ -359,9 +362,7 @@ extension ViewController: MKMapViewDelegate {
 
         if pointAnnotation == self.userAnnotation {
             marker.glyphImage = UIImage(named: "user")
-        } else if RealWorldLocationService.shared.worldPoints.map({ $0.location }).contains(where: {
-            $0.latitude == pointAnnotation.coordinate.latitude && $0.longitude == pointAnnotation.coordinate.longitude
-        }) {
+        } else if RealWorldLocationService.shared.has(point: pointAnnotation.coordinate) {
             marker.markerTintColor = (annotation as? CustomPointAnnotation)?.tintColor
             marker.glyphImage = UIImage(named: "home")
             mapAnnotationViews.append(marker)
@@ -431,8 +432,10 @@ private extension ViewController {
             }
         }
 
-        TrackService.shared.track.points.forEach { (point) in
-            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "point"))
+        if renderTrack {
+            TrackService.shared.track.points.forEach { (point) in
+                nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "point"))
+            }
         }
 
         print("There are \(nodes.count) nodes")
@@ -455,9 +458,11 @@ private extension ViewController {
             mapView.addAnnotation(annotation)
         }
 
-        for point in TrackService.shared.track.points {
-            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
-            mapView.addAnnotation(annotation)
+        if renderTrack {
+            for point in TrackService.shared.track.points {
+                let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
+                mapView.addAnnotation(annotation)
+            }
         }
     }
 
@@ -492,6 +497,8 @@ private extension ViewController {
         for node in trackNodes {
             node.isHidden = false
         }
+
+        // TODO: Show / Hide nodes
 
 //        for node in trackNodes {
 //            let lastState = node.isHidden

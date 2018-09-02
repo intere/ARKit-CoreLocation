@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("NEW SESSION")
 
         _ = TrackService.shared.track
+        _ = RealWorldLocationService.shared
 
         UIApplication.shared.isIdleTimerDisabled = true
 
