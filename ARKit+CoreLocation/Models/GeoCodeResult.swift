@@ -51,8 +51,8 @@ class GeoCodeResult {
     }
 
     /// Builds you a location (real world node) from this GeoCodeResult
-    var locationNode: LocationAnnotationNode {
-        return buildNode(latitude: displayLocation.latitude, longitude: displayLocation.longitude, altitude: 0, imageName: "pin")
+    func buildLocationNode(altitude: CLLocationDistance) -> LocationAnnotationNode {
+        return buildNode(latitude: location.latitude, longitude: location.longitude, altitude: altitude, imageName: "house")
     }
 
     /// Gets you the string to display this geo coded result in a table cell.

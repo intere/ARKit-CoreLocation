@@ -22,17 +22,15 @@ class ViewController: UIViewController {
 
     var updateUserLocationTimer: Timer?
 
-    ///Whether to show a map view
-    ///The initial value is respected
+    /// Whether to show a map view
+    /// The initial value is respected
     var showMapView: Bool = true
 
     var centerMapOnUserLocation: Bool = true
 
-    var verbose = false
-
-    ///Whether to display some debugging data
-    ///This currently displays the coordinate of the best location estimate
-    ///The initial value is respected
+    /// Whether to display some debugging data
+    /// This currently displays the coordinate of the best location estimate
+    /// The initial value is respected
     var displayDebugging = false
 
     var infoLabel = UILabel()
@@ -47,7 +45,9 @@ class ViewController: UIViewController {
     /// A collection of the real world points
     var trackNodes = [LocationAnnotationNode]()
 
-    let button = UIButton(type: UIButtonType.custom)
+    let manageLocationsButton = UIButton(type: .custom)
+    let addCurrentLocationButton = UIButton(type: .custom)
+    let resetButton = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +58,38 @@ class ViewController: UIViewController {
         infoLabel.numberOfLines = 0
         sceneLocationView.addSubview(infoLabel)
 
-        button.setTitle("🏠", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        button.addTarget(self, action: #selector(tappedFindLocation), for: .touchUpInside)
-        sceneLocationView.addSubview(button)
+        manageLocationsButton.setTitle("🏠", for: .normal)
+        manageLocationsButton.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        manageLocationsButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        manageLocationsButton.addTarget(self, action: #selector(tappedFindLocation), for: .touchUpInside)
+        sceneLocationView.addSubview(manageLocationsButton)
 
-        constrain(sceneLocationView, button) { v, b in
-            b.top == v.top + 28
-            b.right == v.right - 8
+        addCurrentLocationButton.setTitle("🚩", for: .normal)
+        addCurrentLocationButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        addCurrentLocationButton.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        addCurrentLocationButton.addTarget(self, action: #selector(tappedAddCurrentLocation), for: .touchUpInside)
+        sceneLocationView.addSubview(addCurrentLocationButton)
+
+        resetButton.setTitle("♻️", for: .normal)
+        resetButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        resetButton.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        resetButton.addTarget(self, action: #selector(tappedReset), for: .touchUpInside)
+        sceneLocationView.addSubview(resetButton)
+
+        constrain(sceneLocationView, manageLocationsButton, addCurrentLocationButton, resetButton) { v, mlb, aclb, rb in
+            mlb.top == v.top + 38
+            mlb.right == v.right - 8
+            aclb.top == mlb.top
+            aclb.right == mlb.left - 8
+            rb.top == aclb.top
+            rb.right == aclb.left - 8
+
+            mlb.width == 40
+            mlb.height == 40
+            aclb.width == 40
+            aclb.height == 40
+            rb.width == 40
+            rb.height == 40
         }
 
         updateInfoLabelTimer = Timer.scheduledTimer(
@@ -77,7 +101,7 @@ class ViewController: UIViewController {
 
         // Set to true to display an arrow which points north.
         //Checkout the comments in the property description and on the readme on this.
-//        sceneLocationView.orientToTrueNorth = false
+        sceneLocationView.orientToTrueNorth = true
 
 //        sceneLocationView.locationEstimateMethod = .coreLocationDataOnly
         sceneLocationView.showAxesNode = true
@@ -87,10 +111,10 @@ class ViewController: UIViewController {
             sceneLocationView.showFeaturePoints = true
         }
 
-        buildDemoData().forEach {
-            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
-            trackNodes.append($0)
-        }
+//        buildDemoData().forEach {
+//            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
+//            trackNodes.append($0)
+//        }
 
         view.addSubview(sceneLocationView)
 
@@ -98,8 +122,6 @@ class ViewController: UIViewController {
             mapView.delegate = self
             mapView.showsUserLocation = true
             mapView.alpha = 0.8
-            // TODO: Do this later
-            addMapPointAnnotations()
             view.addSubview(mapView)
 
             updateUserLocationTimer = Timer.scheduledTimer(
@@ -110,6 +132,8 @@ class ViewController: UIViewController {
                 repeats: true)
         }
 
+        renderLocations()
+
         Notification.ArClExample.locationsUpdated.addObserver(observer: self, selector: #selector(renderLocations))
     }
 
@@ -117,6 +141,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         print("run")
         sceneLocationView.run()
+        renderLocations()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -158,7 +183,7 @@ class ViewController: UIViewController {
             self.updateMapViewAnnotations()
             self.toggleRealWorldPoints()
 
-            if self.verbose, let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
+            if self.displayDebugging, let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
                 let position = self.sceneLocationView.currentScenePosition() {
                 print("")
                 print("Fetch current location")
@@ -174,7 +199,9 @@ class ViewController: UIViewController {
 
             if self.userAnnotation == nil {
                 self.userAnnotation = MKPointAnnotation()
-                self.mapView.addAnnotation(self.userAnnotation!)
+                if let annotation = self.userAnnotation {
+                    self.mapView.addAnnotation(annotation)
+                }
             }
 
             UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
@@ -191,7 +218,6 @@ class ViewController: UIViewController {
 
             if self.displayDebugging {
                 let bestLocationEstimate = self.sceneLocationView.bestLocationEstimate()
-
                 if bestLocationEstimate != nil {
                     if self.locationEstimateAnnotation == nil {
                         self.locationEstimateAnnotation = MKPointAnnotation()
@@ -232,7 +258,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc
+    @IBAction
     func tappedFindLocation() {
         guard let vc = UIStoryboard(name: "GeoCodeSearch", bundle: nil).instantiateInitialViewController() else {
             return print("No initial vc to show")
@@ -240,16 +266,36 @@ class ViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
 
+    @IBAction
+    func tappedAddCurrentLocation() {
+        guard let image = UIImage(named: "pin") else {
+            return
+        }
+        let annotationNode = LocationAnnotationNode(location: nil, image: image)
+        annotationNode.scaleRelativeToDistance = true
+        sceneLocationView.addLocationNodeForCurrentPosition(locationNode: annotationNode)
+        trackNodes.append(annotationNode)
+    }
+
+    @IBAction
+    func tappedReset() {
+        renderLocations()
+    }
+
     @objc
     func renderLocations() {
-        trackNodes.forEach { node in
-            sceneLocationView.removeLocationNode(locationNode: node)
+        if sceneLocationView.sceneNode == nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                self?.renderLocations()
+            }
         }
-        trackNodes.removeAll()
 
+        removeLocations()
+
+        // Add the points to the ARCL frame
         buildDemoData().forEach {
-            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
             trackNodes.append($0)
+            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
         }
 
         if showMapView {
@@ -257,19 +303,31 @@ class ViewController: UIViewController {
         }
     }
 
+    /// Cleans out the locations
+    func removeLocations() {
+        // remove from AR
+        trackNodes.forEach { node in
+            sceneLocationView.removeLocationNode(locationNode: node)
+        }
+        trackNodes.removeAll()
+
+        // Remove from map
+        if showMapView {
+            mapView.removeAnnotations(mapView.annotations)
+        }
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 
-        guard
-            let touch = touches.first,
-            let touchView = touch.view
-        else {
+        guard let touch = touches.first, let touchView = touch.view else {
             return
         }
 
         if mapView == touchView || mapView.recursiveSubviews().contains(touchView) {
             centerMapOnUserLocation = false
         } else {
+
             let location = touch.location(in: self.view)
 
             if location.x <= 40 && adjustNorthByTappingSidesOfScreen {
@@ -278,11 +336,6 @@ class ViewController: UIViewController {
             } else if location.x >= view.frame.size.width - 40 && adjustNorthByTappingSidesOfScreen {
                 print("right side of the screen")
                 sceneLocationView.moveSceneHeadingClockwise()
-            } else {
-                let image = UIImage(named: "pin")!
-                let annotationNode = LocationAnnotationNode(location: nil, image: image)
-                annotationNode.scaleRelativeToDistance = true
-                sceneLocationView.addLocationNodeForCurrentPosition(locationNode: annotationNode)
             }
         }
     }
@@ -306,6 +359,12 @@ extension ViewController: MKMapViewDelegate {
 
         if pointAnnotation == self.userAnnotation {
             marker.glyphImage = UIImage(named: "user")
+        } else if RealWorldLocationService.shared.worldPoints.map({ $0.location }).contains(where: {
+            $0.latitude == pointAnnotation.coordinate.latitude && $0.longitude == pointAnnotation.coordinate.longitude
+        }) {
+            marker.markerTintColor = (annotation as? CustomPointAnnotation)?.tintColor
+            marker.glyphImage = UIImage(named: "home")
+            mapAnnotationViews.append(marker)
         } else {
 //            marker.markerTintColor = UIColor(hue: 0.267, saturation: 0.67, brightness: 0.77, alpha: 1.0)
             marker.markerTintColor = (annotation as? CustomPointAnnotation)?.tintColor
@@ -323,13 +382,13 @@ extension ViewController: MKMapViewDelegate {
 extension ViewController: SceneLocationViewDelegate {
     func sceneLocationViewDidAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
 
-        if verbose {
+        if displayDebugging {
             print("add scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
         }
     }
 
     func sceneLocationViewDidRemoveSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
-        if verbose {
+        if displayDebugging {
             print("remove scene location estimate, position: \(position), location: \(location.coordinate), accuracy: \(location.horizontalAccuracy), date: \(location.timestamp)")
         }
     }
@@ -366,12 +425,17 @@ private extension ViewController {
 //        let canaryWharf = buildNode(latitude: 51.504607, longitude: -0.019592, altitude: 236, imageName: "pin")
 //        nodes.append(canaryWharf)
 
-        RealWorldLocationService.shared.worldPoints.forEach { nodes.append($0.locationNode) }
+        if let elevation = sceneLocationView.currentLocation()?.altitude {
+            RealWorldLocationService.shared.worldPoints.forEach {
+                nodes.append($0.buildLocationNode(altitude: elevation))
+            }
+        }
 
-        // TODO: Reenable this
-//        TrackService.shared.track.points.forEach { (point) in
-//            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "pin"))
-//        }
+        TrackService.shared.track.points.forEach { (point) in
+            nodes.append(buildNode(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude, altitude: point.altitude, imageName: "point"))
+        }
+
+        print("There are \(nodes.count) nodes")
 
         return nodes
     }
@@ -379,22 +443,22 @@ private extension ViewController {
     func buildNode(latitude: CLLocationDegrees, longitude: CLLocationDegrees, altitude: CLLocationDistance, imageName: String) -> LocationAnnotationNode {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let location = CLLocation(coordinate: coordinate, altitude: altitude)
+        print("build point with altitude: \(altitude)")
         let image = UIImage(named: imageName)!
         return LocationAnnotationNode(location: location, image: image)
     }
 
     /// Adds annotations for the track to the map
     func addMapPointAnnotations() {
-        mapView.removeAnnotations(mapView.annotations)
         for node in trackNodes {
             let annotation = CustomPointAnnotation(from: node.location, locationView: sceneLocationView)
             mapView.addAnnotation(annotation)
         }
-        // TODO show / hide track?
-//        for point in TrackService.shared.track.points {
-//            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
-//            mapView.addAnnotation(annotation)
-//        }
+
+        for point in TrackService.shared.track.points {
+            let annotation = CustomPointAnnotation(from: point, locationView: sceneLocationView)
+            mapView.addAnnotation(annotation)
+        }
     }
 
     /// Updates the color of all of the views for us.
@@ -463,7 +527,7 @@ extension UIView {
 
 }
 
-// MARKK: - CLLocation Extension
+// MARK: - CLLocation Extension
 
 extension CLLocation {
 
@@ -472,7 +536,7 @@ extension CLLocation {
     /// - Parameters:
     ///   - another: The location to check the distance to
     ///   - maxDistance: The maximum distance threshold in meters (defaults to 20).
-    func isCloseEnough(to another: CLLocation, maxDistance: CLLocationDistance = 20) -> Bool {
+    func isCloseEnough(to another: CLLocation, maxDistance: CLLocationDistance = 30) -> Bool {
         return distance(from: another) <= maxDistance
     }
 }

@@ -261,7 +261,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
 
         locationNode.location = currentLocation
 
-        ///Location is not changed after being added when using core location data only for location estimates
+        /// Location is not changed after being added when using core location data only for location estimates
         if locationEstimateMethod == .coreLocationDataOnly {
             locationNode.locationConfirmed = true
         } else {
@@ -274,9 +274,9 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         sceneNode.addChildNode(locationNode)
     }
 
-    ///location not being nil, and locationConfirmed being true are required
-    ///Upon being added, a node's position will be modified and should not be changed externally.
-    ///location will not be modified, but taken as accurate.
+    /// location not being nil, and locationConfirmed being true are required
+    /// Upon being added, a node's position will be modified and should not be changed externally.
+    /// location will not be modified, but taken as accurate.
     public func addLocationNodeWithConfirmedLocation(locationNode: LocationNode) {
         if locationNode.location == nil || locationNode.locationConfirmed == false {
             return
@@ -285,7 +285,11 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         updatePositionAndScaleOfLocationNode(locationNode: locationNode, initialSetup: true, animated: false)
 
         locationNodes.append(locationNode)
-        sceneNode?.addChildNode(locationNode)
+
+        guard let sceneNode = sceneNode else {
+            return print("ERROR: sceneNode doesn't yet exist")
+        }
+        sceneNode.addChildNode(locationNode)
     }
 
     public func removeAllNodes() {
@@ -437,7 +441,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
                 scale = appliedScale.y
                 annotationNode.annotationNode.scale = appliedScale
             } else {
-                //Scale it to be an appropriate size so that it can be seen
+                // Scale it to be an appropriate size so that it can be seen
                 scale = Float(adjustedDistance) * 0.181
 
                 if distance > 3000 {
