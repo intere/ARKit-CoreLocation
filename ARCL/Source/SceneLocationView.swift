@@ -11,6 +11,20 @@ import ARKit
 import CoreLocation
 import MapKit
 
+public protocol SceneLocationViewEstimateDelegate: class {
+    func didAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation)
+    func didRemoveSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation)
+}
+
+public extension SceneLocationViewEstimateDelegate {
+    func didAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
+        //
+    }
+    func didRemoveSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation) {
+        //
+    }
+}
+
 @available(iOS 11.0, *)
 public protocol SceneLocationViewDelegate: class {
     func sceneLocationViewDidAddSceneLocationEstimate(sceneLocationView: SceneLocationView, position: SCNVector3, location: CLLocation)
@@ -26,25 +40,15 @@ public protocol SceneLocationViewDelegate: class {
     func sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: SceneLocationView, locationNode: LocationNode)
 }
 
-///Different methods which can be used when determining locations (such as the user's location).
-public enum LocationEstimateMethod {
-    ///Only uses core location data.
-    ///Not suitable for adding nodes using current position, which requires more precision.
-    case coreLocationDataOnly
-
-    ///Combines knowledge about movement through the AR world with
-    ///the most relevant Core Location estimate (based on accuracy and time).
-    case mostRelevantEstimate
-}
-
 //Should conform to delegate here, add in future commit
 @available(iOS 11.0, *)
 public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///The limit to the scene, in terms of what data is considered reasonably accurate.
     ///Measured in meters.
-    private static let sceneLimit = 100.0
+    static let sceneLimit = 100.0
 
-    public weak var locationDelegate: SceneLocationViewDelegate?
+    public weak var locationViewDelegate: SceneLocationViewDelegate?
+    public weak var locationEstimateDelegate: SceneLocationViewEstimateDelegate?
 
     ///The method to use for determining locations.
     ///Not advisable to change this as the scene is ongoing.
@@ -54,25 +58,22 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///When set to true, displays an axes node at the start of the scene
     public var showAxesNode = false
 
-    public private(set) var locationNodes = [LocationNode]()
-
     private var sceneLocationEstimates = [SceneLocationEstimate]()
 
     public private(set) var sceneNode: SCNNode? {
         didSet {
-            if sceneNode != nil {
-                for locationNode in locationNodes {
-                    sceneNode!.addChildNode(locationNode)
-                }
-
-                locationDelegate?.sceneLocationViewDidSetupSceneNode(sceneLocationView: self, sceneNode: sceneNode!)
+            guard let sceneNode = sceneNode else {
+                return
             }
+            for locationNode in locationNodes {
+                sceneNode.addChildNode(locationNode)
+            }
+
+            locationViewDelegate?.sceneLocationViewDidSetupSceneNode(sceneLocationView: self, sceneNode: sceneNode)
         }
     }
 
     private var updateEstimatesTimer: Timer?
-
-    private var didFetchInitialLocation = false
 
     ///Whether debugging feature points should be displayed.
     ///Defaults to false
@@ -86,6 +87,21 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     ///thus affecting your alterations.
     ///The initial value of this property is respected.
     public var orientToTrueNorth = true
+
+    // MARK: Scene location estimates
+    public var currentScenePosition: SCNVector3? {
+        guard let pointOfView = pointOfView else { return nil }
+        return scene.rootNode.convertPosition(pointOfView.position, to: sceneNode)
+    }
+
+    public var currentEulerAngles: SCNVector3? { return pointOfView?.eulerAngles }
+
+    public internal(set) var locationNodes = [LocationNode]()
+    public internal(set) var polylineNodes = [PolylineNode]()
+
+    // MARK: Internal desclarations
+    internal var didFetchInitialLocation = false
+    internal let sceneLocationManager = SceneLocationManager()
 
     // MARK: - Setup
     public convenience init() {
@@ -143,7 +159,8 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         updateEstimatesTimer = nil
     }
 
-    @objc private func updateLocationData() {
+    @objc
+    private func updateLocationData() {
         removeOldLocationEstimates()
         confirmLocationOfDistantLocationNodes()
         updatePositionAndScaleOfLocationNodes()
@@ -175,32 +192,32 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         sceneNode?.eulerAngles.y = 0
     }
 
+    // TODO: Delete me
     // MARK: - Scene location estimates
-
-    public func currentScenePosition() -> SCNVector3? {
-        guard let pointOfView = pointOfView else {
-            return nil
-        }
-
-        return scene.rootNode.convertPosition(pointOfView.position, to: sceneNode)
-    }
-
-    public func currentEulerAngles() -> SCNVector3? {
-        return pointOfView?.eulerAngles
-    }
+//    public func currentScenePosition() -> SCNVector3? {
+//        guard let pointOfView = pointOfView else {
+//            return nil
+//        }
+//
+//        return scene.rootNode.convertPosition(pointOfView.position, to: sceneNode)
+//    }
+//
+//    public func currentEulerAngles() -> SCNVector3? {
+//        return pointOfView?.eulerAngles
+//    }
 
     ///Adds a scene location estimate based on current time, camera position and location from location manager
     fileprivate func addSceneLocationEstimate(location: CLLocation) {
-        if let position = currentScenePosition() {
+        if let position = currentScenePosition {
             let sceneLocationEstimate = SceneLocationEstimate(location: location, position: position)
             self.sceneLocationEstimates.append(sceneLocationEstimate)
 
-            locationDelegate?.sceneLocationViewDidAddSceneLocationEstimate(sceneLocationView: self, position: position, location: location)
+            locationEstimateDelegate?.didAddSceneLocationEstimate(sceneLocationView: self, position: position, location: location)
         }
     }
 
     private func removeOldLocationEstimates() {
-        if let currentScenePosition = currentScenePosition() {
+        if let currentScenePosition = currentScenePosition {
             self.removeOldLocationEstimates(currentScenePosition: currentScenePosition)
         }
     }
@@ -214,7 +231,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
             let radiusContainsPoint = currentPoint.radiusContainsPoint(radius: CGFloat(SceneLocationView.sceneLimit), point: point)
 
             if !radiusContainsPoint {
-                locationDelegate?.sceneLocationViewDidRemoveSceneLocationEstimate(sceneLocationView: self, position: $0.position, location: $0.location)
+                locationEstimateDelegate?.didRemoveSceneLocationEstimate(sceneLocationView: self, position: $0.position, location: $0.location)
             }
 
             return radiusContainsPoint
@@ -243,7 +260,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         }
 
         guard let bestEstimate = self.bestLocationEstimate(),
-            let position = currentScenePosition() else {
+            let position = currentScenePosition else {
                 return nil
         }
 
@@ -253,7 +270,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     // MARK: - LocationNodes
     ///upon being added, a node's location, locationConfirmed and position may be modified and should not be changed externally.
     public func addLocationNodeForCurrentPosition(locationNode: LocationNode) {
-        guard let currentPosition = currentScenePosition(),
+        guard let currentPosition = currentScenePosition,
         let currentLocation = currentLocation(),
         let sceneNode = self.sceneNode else {
             return
@@ -329,7 +346,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
     }
 
     private func confirmLocationOfDistantLocationNodes() {
-        guard let currentPosition = currentScenePosition() else {
+        guard let currentPosition = currentScenePosition else {
             return
         }
 
@@ -339,6 +356,15 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
 
             if !currentPoint.radiusContainsPoint(radius: CGFloat(SceneLocationView.sceneLimit), point: locationNodePoint) {
                 confirmLocationOfLocationNode(locationNode)
+            }
+        }
+    }
+
+    func updatePositionAndScaleOfLocationNodes() {
+        locationNodes.filter { $0.continuallyUpdatePositionAndScale }.forEach { node in
+            node.updatePositionAndScale(scenePosition: currentScenePosition,
+                                        locationManager: sceneLocationManager) {
+                                            self.locationViewDelegate?.sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: self, locationNode: node)
             }
         }
     }
@@ -364,18 +390,11 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
         locationNode.location = locationOfLocationNode(locationNode)
 
         locationNode.locationConfirmed = true
-
-        locationDelegate?.sceneLocationViewDidConfirmLocationOfNode(sceneLocationView: self, node: locationNode)
-    }
-
-    func updatePositionAndScaleOfLocationNodes() {
-        for locationNode in locationNodes where locationNode.continuallyUpdatePositionAndScale {
-            updatePositionAndScaleOfLocationNode(locationNode: locationNode, animated: true)
-        }
+        locationViewDelegate?.sceneLocationViewDidConfirmLocationOfNode(sceneLocationView: self, node: locationNode)
     }
 
     public func updatePositionAndScaleOfLocationNode(locationNode: LocationNode, initialSetup: Bool = false, animated: Bool = false, duration: TimeInterval = 0.1) {
-        guard let currentPosition = currentScenePosition(),
+        guard let currentPosition = currentScenePosition,
             let currentLocation = currentLocation() else {
             return
         }
@@ -509,6 +528,36 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
             print("camera did change tracking state: not available")
         case .limited(.relocalizing):
             print("camera did change tracking state: limited, relocalizing")
+        }
+    }
+}
+
+// MARK: - Routes
+
+@available(iOS 11.0, *)
+public extension SceneLocationView {
+
+    public func addRoutes(routes: [MKRoute]) {
+        guard let altitude = sceneLocationManager.currentLocation?.altitude else { return }
+        let polyNodes = routes.map { PolylineNode(polyline: $0.polyline, altitude: altitude - 2.0) }
+
+        polylineNodes.append(contentsOf: polyNodes)
+        polyNodes.forEach {
+            $0.locationNodes.forEach {
+                $0.updatePositionAndScale(setup: true,
+                                          scenePosition: currentScenePosition,
+                                          locationManager: sceneLocationManager,
+                                          onCompletion: {})
+                sceneNode?.addChildNode($0)
+            }
+        }
+    }
+
+    public func removeRoutes(routes: [MKRoute]) {
+        routes.forEach { route in
+            if let index = polylineNodes.index(where: { $0.polyline == route.polyline }) {
+                polylineNodes.remove(at: index)
+            }
         }
     }
 }
