@@ -108,7 +108,7 @@ class ViewController: UIViewController {
 
 //        sceneLocationView.locationEstimateMethod = .coreLocationDataOnly
         sceneLocationView.showAxesNode = true
-        sceneLocationView.locationDelegate = self
+        sceneLocationView.locationViewDelegate = self
 
         if displayDebugging {
             sceneLocationView.showFeaturePoints = true
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
             self.toggleRealWorldPoints()
 
             if self.displayDebugging, let bestEstimate = self.sceneLocationView.bestLocationEstimate(),
-                let position = self.sceneLocationView.currentScenePosition() {
+                let position = self.sceneLocationView.currentScenePosition {
                 print("")
                 print("Fetch current location")
                 print("best location estimate, position: \(bestEstimate.position), location: \(bestEstimate.location.coordinate), accuracy: \(bestEstimate.location.horizontalAccuracy), date: \(bestEstimate.location.timestamp)")
@@ -240,11 +240,11 @@ class ViewController: UIViewController {
 
     @objc
     func updateInfoLabel() {
-        if let position = sceneLocationView.currentScenePosition() {
+        if let position = sceneLocationView.currentScenePosition {
             infoLabel.text = "x: \(String(format: "%.2f", position.x)), y: \(String(format: "%.2f", position.y)), z: \(String(format: "%.2f", position.z))\n"
         }
 
-        if let eulerAngles = sceneLocationView.currentEulerAngles() {
+        if let eulerAngles = sceneLocationView.currentEulerAngles {
             infoLabel.text!.append("Euler x: \(String(format: "%.2f", eulerAngles.x)), y: \(String(format: "%.2f", eulerAngles.y)), z: \(String(format: "%.2f", eulerAngles.z))\n")
         }
 
@@ -454,7 +454,10 @@ private extension ViewController {
     /// Adds annotations for the track to the map
     func addMapPointAnnotations() {
         for node in trackNodes {
-            let annotation = CustomPointAnnotation(from: node.location, locationView: sceneLocationView)
+            guard let location = node.location else {
+                continue
+            }
+            let annotation = CustomPointAnnotation(from: location, locationView: sceneLocationView)
             mapView.addAnnotation(annotation)
         }
 

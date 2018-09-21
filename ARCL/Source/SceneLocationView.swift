@@ -475,7 +475,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
 
         SCNTransaction.commit()
 
-        locationDelegate?.sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: self, locationNode: locationNode)
+        locationViewDelegate?.sceneLocationViewDidUpdateLocationAndScaleOfLocationNode(sceneLocationView: self, locationNode: locationNode)
     }
 
     // MARK: - ARSCNViewDelegate
@@ -574,7 +574,7 @@ extension SceneLocationView: LocationManagerDelegate {
         if accuracy < 0 {
             return
         }
-        
+
         // heading of 0º means its pointing to the geographic North
         if heading == 0 {
             resetSceneHeading()
