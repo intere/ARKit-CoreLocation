@@ -304,6 +304,7 @@ class ViewController: UIViewController {
         if showMapView {
             addMapPointAnnotations()
         }
+        renderTrackPolyline()
     }
 
     /// Cleans out the locations

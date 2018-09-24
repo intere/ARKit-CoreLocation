@@ -541,7 +541,9 @@ public extension SceneLocationView {
     ///
     /// - Parameter polyline: The polyline to add to the scene.
     public func addRoute(with polyline: MKPolyline) {
-        guard let altitude = sceneLocationManager.currentLocation?.altitude else { return }
+        guard let altitude = sceneLocationManager.currentLocation?.altitude else {
+            return
+        }
         let polylineNode = PolylineNode(polyline: polyline, altitude: altitude)
         polylineNodes.append(polylineNode)
 

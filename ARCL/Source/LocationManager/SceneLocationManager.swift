@@ -59,10 +59,13 @@ final class SceneLocationManager {
     }
 
     var currentLocation: CLLocation? {
-        if locationEstimateMethod == .coreLocationDataOnly { return locationManager.currentLocation }
+        if locationEstimateMethod == .coreLocationDataOnly {
+            return locationManager.currentLocation
+        }
 
-        guard let bestEstimate = bestLocationEstimate,
-            let position = sceneLocationDelegate?.scenePosition else { return nil }
+        guard let bestEstimate = bestLocationEstimate, let position = sceneLocationDelegate?.scenePosition else {
+                return nil
+        }
 
         return bestEstimate.translatedLocation(to: position)
     }
