@@ -514,6 +514,16 @@ private extension ViewController {
 //        }
     }
 
+    func renderTrackPolyline() {
+        guard let currentLocation = sceneLocationView.currentLocation() else {
+            return print("ERROR: We don't have a location yet, skipping polyline")
+        }
+        guard let track = TrackService.shared.track else {
+            return print ("ERROR: We couldn't load the track")
+        }
+        sceneLocationView.addRoute(with: track.polyline)
+    }
+
 }
 
 extension DispatchQueue {

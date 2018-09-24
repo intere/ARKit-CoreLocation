@@ -537,6 +537,23 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
 @available(iOS 11.0, *)
 public extension SceneLocationView {
 
+    /// Adds the provided polyline to the ARCL Scene.
+    ///
+    /// - Parameter polyline: The polyline to add to the scene.
+    public func addRoute(with polyline: MKPolyline) {
+        guard let altitude = sceneLocationManager.currentLocation?.altitude else { return }
+        let polylineNode = PolylineNode(polyline: polyline, altitude: altitude)
+        polylineNodes.append(polylineNode)
+
+        polylineNode.locationNodes.forEach {
+            $0.updatePositionAndScale(setup: true,
+                                      scenePosition: currentScenePosition,
+                                      locationManager: sceneLocationManager,
+                                      onCompletion: {})
+            sceneNode?.addChildNode($0)
+        }
+    }
+
     public func addRoutes(routes: [MKRoute]) {
         guard let altitude = sceneLocationManager.currentLocation?.altitude else { return }
         let polyNodes = routes.map { PolylineNode(polyline: $0.polyline, altitude: altitude - 2.0) }
