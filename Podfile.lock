@@ -1,8 +1,12 @@
 PODS:
   - ARCL (1.1.0)
+  - GeoTrackKit (0.4.2):
+    - GeoTrackKit/Core (= 0.4.2)
+  - GeoTrackKit/Core (0.4.2)
 
 DEPENDENCIES:
   - ARCL (from `.`)
+  - GeoTrackKit
 
 EXTERNAL SOURCES:
   ARCL:
@@ -10,7 +14,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ARCL: de572e728e225494df56183b23e5203581915ffd
+  GeoTrackKit: f443556068ee464cdacf6a0d6915c22c1c92d2a2
 
-PODFILE CHECKSUM: 1576bdfdc3990c7e821f93bcae8cf3b28a3cf18c
+PODFILE CHECKSUM: 5c3ff95dc3aefb388001b6eb83267099b3026941
 
 COCOAPODS: 1.4.0
