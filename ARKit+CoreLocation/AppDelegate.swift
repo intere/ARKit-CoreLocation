@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("NEW SESSION")
 
+        _ = TrackService.shared.track
+        _ = RealWorldLocationService.shared
+
         UIApplication.shared.isIdleTimerDisabled = true
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
