@@ -7,451 +7,512 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02409B80871103A31384C822522D42C4 /* NumberExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282786F09AA81D743A559F94397CDC8 /* NumberExtensions.swift */; };
-		0B3489218F834ED22224DFEEC18CD822 /* GeoTrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7B883A32F0D55655DBE1B12459BE6 /* GeoTrackManager.swift */; };
-		1141582DFA8578C1C931FA67D3E4C589 /* ZoomDefining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2903F16CF3CE0EFAFE35D0F9DA69EB /* ZoomDefining.swift */; };
-		14F8B803A452F6211661CD2CA55DD95B /* PolylineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844BEA3F09AE54C50AA6A06BE67820 /* PolylineNode.swift */; };
-		190859FAD0E32E36C3331EE84F2D6BD9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A85C8D18E8A03ABB41D7AEFFF5D99E /* DateExtension.swift */; };
-		1A1D714CA84B010DB05F5D2D022AF065 /* GeoTrackKitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B7A4B82CD993D3EFA6C563E8F454F /* GeoTrackKitErrors.swift */; };
-		238C3193523CD04B2A8B4B2D3E2946B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C167BE81500CB0164A60D9EEFFBD72 /* UIKit.framework */; };
-		2E98CB87DFB3923A1157AA8C58C87B29 /* SceneLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C46186898A66C66EBC7AA6B1AD7EC /* SceneLocationView.swift */; };
-		342DBC52D0328C845BC194EC554116CD /* GeoTrackAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32274F2C46D1C3BB2318B6FE8BE0A7AF /* GeoTrackAnalyzer.swift */; };
-		36C0217846A912792B87BC4ABEFFA2D4 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB622099672CA8E3974ECE2836DF8C /* CLLocation+Extensions.swift */; };
-		3775D5F7E08BB4081A909B116556CED8 /* GeoTrack+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC15A851A5DFDD9CB1DB5FF2CC86D7F /* GeoTrack+Utilities.swift */; };
-		3DAF682C854589D1C6DDA73CF61A775C /* UIGeoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1919205A6F11A72072A40AE91AA9B /* UIGeoTrack.swift */; };
-		507E5E52A5ECED1AEDC26C99456CCA74 /* SceneLocationEstimate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996A453A4806CFBD7C0398C8F20B9800 /* SceneLocationEstimate+Extensions.swift */; };
-		5305A3B9017C5A746DDD7E6B4B6BEF72 /* SceneLocationEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C537045D1388B6DB9760A55DE424DA7 /* SceneLocationEstimate.swift */; };
-		58C6E49FC2A5410629A796D412F7895F /* SceneLocationView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27CBFED08267690AB14B8F2285AD17 /* SceneLocationView+Extensions.swift */; };
-		5B055EF0BB8EA452469756E4B3380F7C /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658B998833FCE123F70E4E3C9B9C42C /* CLLocationExtension.swift */; };
-		5BFF26EB7BFD1D9E568F9BAE6128E801 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA43AFA5708B9C91D9B5BDC478DDE75 /* SCNVector3+Extensions.swift */; };
-		5D3214E139E2A132F6746D67C5933B96 /* GeoTrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DB62CF59BA635E7C6756CBC76327A /* GeoTrackService.swift */; };
-		5EBC633C0C9EC886B5344700F2ED99F4 /* GeoTrackKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 918F3FAD51F6FB18A35B44CE93CB3B5C /* GeoTrackKit-dummy.m */; };
-		61B71FB061AF6ADF0475AC426AC0D338 /* GeoTrackMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE493F62A41CD0CB7E3F976B18ACCB /* GeoTrackMap.swift */; };
-		630A2F470C930B4D3C04ECFADF51F3DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73571F4B2281E0098DC76443D509656 /* Foundation.framework */; };
-		70CC76978A935744DC663BC14562DAA3 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D139E4A483F5C9FF7317D529E115E3 /* Leg.swift */; };
-		784E6F12105BE3307170A3CE4528F3A3 /* ScalingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96E7BD198DAF3B24E3BA871D2D0D4B3 /* ScalingScheme.swift */; };
-		79C47686D216D55E87DBA7FB62D80E29 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448C8D3B02A33C992689E219E119203 /* ARKit.framework */; };
-		88147B25912D2BD4EF39B767D47CEDE8 /* GeoTrackLocationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611FDCF1605F07C3B33E15A4CF180ADC /* GeoTrackLocationEvent.swift */; };
-		89E026FC76FE081B7E85463874FB7EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73571F4B2281E0098DC76443D509656 /* Foundation.framework */; };
-		8C635958A0B693E919C7D2C9BAA23775 /* ARCL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF097FAD3A0AEA3B21C3F33603B259A5 /* ARCL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D2425CF38786CDE783BC9EE466B4C49 /* LocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573CA62C7645E820A91FB8ABEF2120D /* LocationAnnotationNode.swift */; };
-		907FB1E846761D99EF81613823B3CFCB /* GeoTrackEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26F8C3D9642591F0A41DF7DB5CEF72 /* GeoTrackEventLog.swift */; };
-		952576B64DF01049CC3722780AEEA192 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A94AD5F423B5E0AD5E860F3ADF8940 /* LocationManager.swift */; };
-		9E66AFE0835DCD2508C22F134C161AAB /* ARCL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 637155CB678DAAAB51A3853B1B91C2CB /* ARCL-dummy.m */; };
-		A746A27DE654F6615BFAC0EF1CD2B8C2 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC42FAC9776DAEF8E1433EAD2A627D /* CGPoint+Extensions.swift */; };
-		A7A60539C02AED30A9664BF28C2AB157 /* FloatingPoint+Radians.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC15ACAEA226B83B357219FDE455D6 /* FloatingPoint+Radians.swift */; };
-		AB6586B1A78BEBC3ABF17611A0F2EA61 /* LoggingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3767A9B6F38F668E88BC3FA9938E987A /* LoggingFunctions.swift */; };
-		B9A4C3848E1C885CF97A70CEB45F8202 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73571F4B2281E0098DC76443D509656 /* Foundation.framework */; };
-		C0C2451F8287DED4E2DBFF23D5442C41 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ED9BAAD51A3DE367F376DB6C47C0D /* SCNNode+Extensions.swift */; };
-		C59F706FAC54CC69F98BB81A780A2518 /* SceneLocationViewEstimateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A17A47E6074E3B666A78401600B58E6 /* SceneLocationViewEstimateDelegate.swift */; };
-		C6B599B2C0335A556171C48A500B77E6 /* BaseTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF20C69548FD39E3926C2814BF8BB6 /* BaseTypes+Extensions.swift */; };
-		CBBC808ABAA93D77DCE027EF4CEF4213 /* DefaultMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229D74E11704C0D081DF14BBE8C7867 /* DefaultMapZoom.swift */; };
-		CE743176E73F7D90A2007D97EF16C486 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893DA6918C0ED7EBDEE9A9C24940A7C5 /* CoreLocation.framework */; };
-		D614825F607EA719418943BEB22720E0 /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F79FB3DD067ECA958AFB89E4EED90 /* LocationNode.swift */; };
-		DA0B8C325E3522192D2BB46AFED6605F /* Pods-ARKit+CoreLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1569D8AB75F6B4E0C4BB77FF9E53D61B /* Pods-ARKit+CoreLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB68206AD34E0F80BD016A7686B84157 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7175760E70DBC0C749A613721BD92E3 /* SceneKit.framework */; };
-		E1A271A55B1157AC616F72D5F20CB80F /* SceneLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23156A605D80DB4EDEF494E5CCC8442 /* SceneLocationManager.swift */; };
-		E3E2BCCDC0E3F0EBD5E7815F35AFF320 /* GeoTrackKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86030D53EFCA3D96AEA84D875121052C /* GeoTrackKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5A4B22CDBB18CBE58344CC5084303CF /* GeoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993D497EE13685EBCEF04C7971D217 /* GeoTrack.swift */; };
-		F062348FA46FA75BF4AA9E51DF57AB3E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C77626DC61CC820DD862D736C3A8262 /* MapKit.framework */; };
-		F610F37727A314482C11F16F9D75C4A3 /* GeoTrackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D9CF1D35C4F1683CFB97515E8FF0D /* GeoTrackState.swift */; };
-		FC94417D3F18D3A26ADE3B419580A285 /* GeoTrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2BD95579B20698C27CF3FB6151416F /* GeoTrackEvent.swift */; };
-		FDCAA83370BABD7F83DF7C5CBE96A128 /* Pods-ARKit+CoreLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D33B939D8285598F2C92F217F8E11CC6 /* Pods-ARKit+CoreLocation-dummy.m */; };
+		069043A53F3F6FE754683A46F1E0DAA7 /* SceneLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52561807A81CC9DF092C92103A10D4C9 /* SceneLocationView.swift */; };
+		07FE0E3BE43DE7AB4E9342D504C47FDC /* GeoTrackAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A917093598A1532CFDC19ED82F7F624 /* GeoTrackAnalyzer.swift */; };
+		138208E3B3E894F69715FFB65DD040C1 /* Pods-ARKit+CoreLocation-ARCLTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 650F17B3825183447E0A364F72A65B27 /* Pods-ARKit+CoreLocation-ARCLTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17638CD98448242EB67F8B5B474D863C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */; };
+		17A566507509FDA3A7FA23FC0305A151 /* SceneLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B2C2D0D06DCE6E013BF6A8B8F6AF4 /* SceneLocationManager.swift */; };
+		1DE0F261A266C4CBC655880684FAA023 /* GeoTrackKitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F42DE99AD47CE2BF949846639C2CB3D /* GeoTrackKitErrors.swift */; };
+		248D87574ADA8476ED408210610584E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		279F012AF3B2C726F798068BCF2F9A57 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1F6E10ED83896210B9E37CEC7B70D4 /* SCNVector3+Extensions.swift */; };
+		28ECFF81377431686F8F6EC0ED747018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9198131727667F5A36AEE40099328680 /* UIKit.framework */; };
+		2A6243914F2EB0715258F3976A85A3B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		3129409B6767535BC0DD01301A7BBAEC /* ScalingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D060276B9FBD7432A298048F8BB6A5 /* ScalingScheme.swift */; };
+		4074BC67A80281834A19047ADC89B250 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDC5807D130053EE50D9C4824CFD2FF /* SCNNode+Extensions.swift */; };
+		43873DD799E170FA97B8D73F449FA7AD /* Pods-ARKit+CoreLocation-ARCLTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A615DE63AED9AE3747BEF9A40040B4D5 /* Pods-ARKit+CoreLocation-ARCLTests-dummy.m */; };
+		4443543B1C58AAE8587F5C69BEE9CDB9 /* Pods-ARKit+CoreLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 303610F98BADC92BFE11758A08D38508 /* Pods-ARKit+CoreLocation-dummy.m */; };
+		48B7B32C071135376DFED68A8A463C7A /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9006CC0EBFF0801B0AE775B6F61C519 /* Leg.swift */; };
+		4C7A856D2886BB3D6193B9E855CBEDB9 /* BaseTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4373BDC4B2808F5B7B615C6186B1FB /* BaseTypes+Extensions.swift */; };
+		550CC16648B06D71D319B4D2E7130023 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E3AECC1F8C38AFF4C4AA859B12BC75 /* CLLocation+Extensions.swift */; };
+		58667F079680719B9961FB3CDB270013 /* NumberExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC835D812B89E11CB5F5B9DA5598B869 /* NumberExtensions.swift */; };
+		733709F69C4FD71039B6C15D4166A31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		788415EEFA68D8E3958A1CAB215F43EB /* ARCL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A162FA8F109F3DBFEFD788DA62C674E8 /* ARCL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DE0A69D337B91E2169CF13DF0891FD9 /* PolylineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5112160F35E4C5F3E3D841D41A12B /* PolylineNode.swift */; };
+		82D520695DF2A4B845AB64556F74D182 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */; };
+		8310F54A255186528B874F64A1F45600 /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7CEB5787B1305411AA9E33C77601EC /* LocationNode.swift */; };
+		867CD5833D0419FF267206035AD1A6F3 /* FloatingPoint+Radians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AAC2D82C0F1E9F21126C03BDB1CE95 /* FloatingPoint+Radians.swift */; };
+		88EC0EF6035128C80380A123B8307759 /* GeoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A72A81514C3F9D40B0269615B69D01B /* GeoTrack.swift */; };
+		89778CBFCF592626E74862BE755424AB /* ARKit_CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0875D1BAF20FE9320AF9358BABD9E /* ARKit_CoreLocation.swift */; };
+		98DF772189E08D0294BF47CAA8A42015 /* GeoTrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BA12346382F793D998E0C00B0D7724 /* GeoTrackManager.swift */; };
+		9B63C1981FDB5DD454C7A5B7509A711E /* GeoTrackKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC17D78E24D234CB534FE018310C3C8 /* GeoTrackKit-dummy.m */; };
+		9C518C431C34536A978971891033AC84 /* ZoomDefining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF93C4192771CBD14F61B3ADBB65DD /* ZoomDefining.swift */; };
+		A5CC89F3ECB62589702D6C16C3BEB877 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13C7C86004B6335B211EE3F6A393DD /* DateExtension.swift */; };
+		A730A1B971E33622C9D4488329356CF6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA272986C62108D971D1681FF887203E /* CoreLocation.framework */; };
+		A94E82039E0A6434E59D409CCC7CC00B /* LoggingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A7C894335A770BC3C5065D65975B04 /* LoggingFunctions.swift */; };
+		ACEDEA8F59F3AE94F99F21925CEC2371 /* GeoTrackKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C57027C7A5C03C189DD87A5930E0CDE3 /* GeoTrackKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B757ADBC97058409800DD7819F832042 /* UIGeoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648F7257602CE7E130CE98C64FD9CC7 /* UIGeoTrack.swift */; };
+		B8DA035327D39C438A316A2D883DC594 /* Pods-ARKit+CoreLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B117D48FB04306016B03AA2342E3B /* Pods-ARKit+CoreLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA1192585DD42183DF8BC16C4F70DDCC /* SceneLocationViewEstimateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA076782D3DD63A6CDF0B3EADBB9406 /* SceneLocationViewEstimateDelegate.swift */; };
+		BA597D62AE7978413001BD997BD52AEB /* GeoTrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1224952B0BF85D8ACC02521C68DF24 /* GeoTrackEvent.swift */; };
+		C2D37286706058739D85B807FC99622D /* DefaultMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314A567C8B572B3F449C7709CB012CF /* DefaultMapZoom.swift */; };
+		C3B75CF7F32EE3302F2ED7123902B27A /* SceneLocationEstimate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE643C84E53EC68C1DABAF36A53C375 /* SceneLocationEstimate+Extensions.swift */; };
+		D094F2E41336133A52BA77F44EE69030 /* GeoTrackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D4D28E3DC1EBAA94763E4272A2AF9 /* GeoTrackState.swift */; };
+		D0DA44FD57B5A46FCAE6252ACDBD380E /* GeoTrackLocationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E793EC05E54810421743BB04F6B628 /* GeoTrackLocationEvent.swift */; };
+		D265A1FC38B8D5CC3EDCC3D9B27E15E5 /* ARCL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68920D043760F1251959B546646C2854 /* ARCL-dummy.m */; };
+		DC63A53D4F28CFEF5B624D649532BB70 /* GeoTrackMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7275A278409D792B848D6E0BCFEBE39 /* GeoTrackMap.swift */; };
+		EB1CA2AC9D41A6562C4C605BE6EB529E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5428F783D68BB31836D5AC2E455EB0 /* LocationManager.swift */; };
+		EB9EB390D32A49EE83FEC6590D5DF950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		ED34AB2D1783C9C8BC11424EB855923B /* SceneLocationEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C529C95D3F50B0C8A00401DEDF843B2 /* SceneLocationEstimate.swift */; };
+		ED9E52069F67212D54476DE96B4F6B6A /* SceneLocationView+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDCC6203B3A15C00060D9435AFAC5A /* SceneLocationView+ARSCNViewDelegate.swift */; };
+		F08FEF886011B4404ED20A7C06818862 /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5B13E2C9922513B3A490DD43356603 /* CLLocationExtension.swift */; };
+		F20DE046CA8DE67BCFA98D0663328A30 /* GeoTrackEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7328D00DA4802AB40A99D272FF0D40F /* GeoTrackEventLog.swift */; };
+		F345B16DEDDB684382A01B74A1E60ED6 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C29C12A6549B56A36BF8016F1407FF /* CGPoint+Extensions.swift */; };
+		F50005FA5C3F3B0E9A977D47DA60BC9D /* GeoTrack+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE156FA73A7C7E218EC355DD9001EBC /* GeoTrack+Utilities.swift */; };
+		F772FB61F6A3D37BC401493945B7E145 /* GeoTrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7356A18E7EC31F5931D35FA0B56C4 /* GeoTrackService.swift */; };
+		F9739A29FE877BB05F52B0C05C55499D /* LocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C783B75E5413A2DE480E2371D77E1A /* LocationAnnotationNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2432F72FC317BB8EF8CA813EA4FAAD91 /* PBXContainerItemProxy */ = {
+		170ADFC4B9BDF55CB06ED26105535477 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3568851C91A5B933C59071F1CA3C2315;
+			remoteGlobalIDString = 4E1F0A83DA8B9DC95EB479D88999BE67;
+			remoteInfo = GeoTrackKit;
+		};
+		B0E6C7952F77CAC06C495C828E40B3CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB32E97F940371D391F6B8FB4F24AC15;
 			remoteInfo = ARCL;
 		};
-		61AC7E7D30A215E00F6775F321ABEAF1 /* PBXContainerItemProxy */ = {
+		BBBC37878E5005CE515E2BDA1FAABF3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AAF625B221F9718DFD19AB30D5C05A51;
+			remoteGlobalIDString = 4E1F0A83DA8B9DC95EB479D88999BE67;
 			remoteInfo = GeoTrackKit;
+		};
+		EE98663D9EFF396BEA2FF55200C9A04C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB32E97F940371D391F6B8FB4F24AC15;
+			remoteInfo = ARCL;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		028C46186898A66C66EBC7AA6B1AD7EC /* SceneLocationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationView.swift; path = ARCL/Source/SceneLocationView.swift; sourceTree = "<group>"; };
-		064876F1614121A977987E29CEFAFA75 /* ARCL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-prefix.pch"; sourceTree = "<group>"; };
-		07D139E4A483F5C9FF7317D529E115E3 /* Leg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Leg.swift; path = GeoTrackKit/Core/Models/Analyze/Leg.swift; sourceTree = "<group>"; };
-		0C537045D1388B6DB9760A55DE424DA7 /* SceneLocationEstimate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneLocationEstimate.swift; sourceTree = "<group>"; };
-		0DA43AFA5708B9C91D9B5BDC478DDE75 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
-		11AFDEEF38FE1366F08305D21B318F8E /* Pods_ARKit_CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ARKit_CoreLocation.framework; path = "Pods-ARKit+CoreLocation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14020CD2FADC6360BEB98E8F9A6A0C2F /* Pods-ARKit+CoreLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ARKit+CoreLocation.modulemap"; sourceTree = "<group>"; };
-		1569D8AB75F6B4E0C4BB77FF9E53D61B /* Pods-ARKit+CoreLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ARKit+CoreLocation-umbrella.h"; sourceTree = "<group>"; };
-		1658B998833FCE123F70E4E3C9B9C42C /* CLLocationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = GeoTrackKit/Core/Extension/CLLocationExtension.swift; sourceTree = "<group>"; };
-		1A17A47E6074E3B666A78401600B58E6 /* SceneLocationViewEstimateDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationViewEstimateDelegate.swift; path = ARCL/Source/SceneLocationViewEstimateDelegate.swift; sourceTree = "<group>"; };
-		1D74A47AD7FB1304DC0FF2D215FCE1B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DE8136DA93CFFFCEBB235D0B18D7B12 /* Pods-ARKit+CoreLocation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ARKit+CoreLocation-acknowledgements.plist"; sourceTree = "<group>"; };
-		22D49B6952BC3818A4F553724BB91D50 /* readme.jp.md */ = {isa = PBXFileReference; includeInIndex = 1; path = readme.jp.md; sourceTree = "<group>"; };
-		2A993D497EE13685EBCEF04C7971D217 /* GeoTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrack.swift; path = GeoTrackKit/Core/Models/GeoTrack.swift; sourceTree = "<group>"; };
-		31008223054A38C53258039BD66044B9 /* GeoTrackKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoTrackKit.xcconfig; sourceTree = "<group>"; };
-		32274F2C46D1C3BB2318B6FE8BE0A7AF /* GeoTrackAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackAnalyzer.swift; path = GeoTrackKit/Core/GeoTrackAnalyzer.swift; sourceTree = "<group>"; };
-		32BC08E327E74EC725DB6E8EC868ADA1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		36BB622099672CA8E3974ECE2836DF8C /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
-		3767A9B6F38F668E88BC3FA9938E987A /* LoggingFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggingFunctions.swift; path = GeoTrackKit/Core/LoggingFunctions.swift; sourceTree = "<group>"; };
-		3E9F79FB3DD067ECA958AFB89E4EED90 /* LocationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationNode.swift; sourceTree = "<group>"; };
-		41AC42FAC9776DAEF8E1433EAD2A627D /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		432A7B01A9F2186EF53E226A523AB586 /* GeoTrackKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeoTrackKit.modulemap; sourceTree = "<group>"; };
-		49AF8AA326E76711FB29567A31A81D88 /* Pods-ARKit+CoreLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation.release.xcconfig"; sourceTree = "<group>"; };
-		4F27CBFED08267690AB14B8F2285AD17 /* SceneLocationView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SceneLocationView+Extensions.swift"; path = "ARCL/Source/SceneLocationView+Extensions.swift"; sourceTree = "<group>"; };
-		522B7A4B82CD993D3EFA6C563E8F454F /* GeoTrackKitErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackKitErrors.swift; path = GeoTrackKit/Core/GeoTrackKitErrors.swift; sourceTree = "<group>"; };
-		54BF33596D2F47F9360A5D182FD36494 /* ARCL.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARCL.xcconfig; sourceTree = "<group>"; };
-		59CE3D8C4F6E75CBE36D02EE900A80F4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C77626DC61CC820DD862D736C3A8262 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		611FDCF1605F07C3B33E15A4CF180ADC /* GeoTrackLocationEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackLocationEvent.swift; path = GeoTrackKit/Core/Models/GeoTrackLocationEvent.swift; sourceTree = "<group>"; };
-		6282786F09AA81D743A559F94397CDC8 /* NumberExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberExtensions.swift; path = GeoTrackKit/Core/Extension/NumberExtensions.swift; sourceTree = "<group>"; };
-		637155CB678DAAAB51A3853B1B91C2CB /* ARCL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARCL-dummy.m"; sourceTree = "<group>"; };
-		6D2903F16CF3CE0EFAFE35D0F9DA69EB /* ZoomDefining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomDefining.swift; path = GeoTrackKit/Core/Map/ZoomDefining.swift; sourceTree = "<group>"; };
-		715DB62CF59BA635E7C6756CBC76327A /* GeoTrackService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackService.swift; path = GeoTrackKit/Core/GeoTrackService.swift; sourceTree = "<group>"; };
-		8448C8D3B02A33C992689E219E119203 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
-		86030D53EFCA3D96AEA84D875121052C /* GeoTrackKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoTrackKit-umbrella.h"; sourceTree = "<group>"; };
-		893DA6918C0ED7EBDEE9A9C24940A7C5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		8A26F8C3D9642591F0A41DF7DB5CEF72 /* GeoTrackEventLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackEventLog.swift; path = GeoTrackKit/Core/GeoTrackEventLog.swift; sourceTree = "<group>"; };
-		8CEB44D82BCAEFF76A7BEF1DCBA8E30B /* ARCL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ARCL.modulemap; sourceTree = "<group>"; };
-		918F3FAD51F6FB18A35B44CE93CB3B5C /* GeoTrackKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoTrackKit-dummy.m"; sourceTree = "<group>"; };
-		91D7B883A32F0D55655DBE1B12459BE6 /* GeoTrackManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackManager.swift; path = GeoTrackKit/Core/GeoTrackManager.swift; sourceTree = "<group>"; };
-		9229D74E11704C0D081DF14BBE8C7867 /* DefaultMapZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultMapZoom.swift; path = GeoTrackKit/Core/Map/DefaultMapZoom.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94AE493F62A41CD0CB7E3F976B18ACCB /* GeoTrackMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackMap.swift; path = GeoTrackKit/Core/Map/GeoTrackMap.swift; sourceTree = "<group>"; };
-		97D1919205A6F11A72072A40AE91AA9B /* UIGeoTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIGeoTrack.swift; path = GeoTrackKit/Core/Map/UIModels/UIGeoTrack.swift; sourceTree = "<group>"; };
-		996A453A4806CFBD7C0398C8F20B9800 /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
-		9F26BAB6A40C4B6A19E747B3F459C8FF /* Pods-ARKit+CoreLocation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ARKit+CoreLocation-frameworks.sh"; sourceTree = "<group>"; };
-		A4FF28CC89209C8800BB15011F5F0604 /* Pods-ARKit+CoreLocation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ARKit+CoreLocation-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A7394B31D1C8B5B74B296696309FE73F /* GeoTrackKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GeoTrackKit.framework; path = GeoTrackKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9C167BE81500CB0164A60D9EEFFBD72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AA4844D4BE9E959F39D4510860B3554E /* ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ARCL.framework; path = ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAC15A851A5DFDD9CB1DB5FF2CC86D7F /* GeoTrack+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GeoTrack+Utilities.swift"; path = "GeoTrackKit/Core/Models/GeoTrack+Utilities.swift"; sourceTree = "<group>"; };
-		B0A85C8D18E8A03ABB41D7AEFFF5D99E /* DateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = GeoTrackKit/Core/Extension/DateExtension.swift; sourceTree = "<group>"; };
-		B7A0E4E6F76C3400D5E6906D558B8FB8 /* Pods-ARKit+CoreLocation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ARKit+CoreLocation-resources.sh"; sourceTree = "<group>"; };
-		B96E7BD198DAF3B24E3BA871D2D0D4B3 /* ScalingScheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScalingScheme.swift; sourceTree = "<group>"; };
-		BB844BEA3F09AE54C50AA6A06BE67820 /* PolylineNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolylineNode.swift; sourceTree = "<group>"; };
-		BF097FAD3A0AEA3B21C3F33603B259A5 /* ARCL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-umbrella.h"; sourceTree = "<group>"; };
-		C49D9CF1D35C4F1683CFB97515E8FF0D /* GeoTrackState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackState.swift; path = GeoTrackKit/Core/GeoTrackState.swift; sourceTree = "<group>"; };
-		C6A94AD5F423B5E0AD5E860F3ADF8940 /* LocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		C7175760E70DBC0C749A613721BD92E3 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
-		CC0D2C53626AB8426BA13C420F5B1D21 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D23156A605D80DB4EDEF494E5CCC8442 /* SceneLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneLocationManager.swift; sourceTree = "<group>"; };
-		D33B939D8285598F2C92F217F8E11CC6 /* Pods-ARKit+CoreLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ARKit+CoreLocation-dummy.m"; sourceTree = "<group>"; };
-		D73571F4B2281E0098DC76443D509656 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D76ED9BAAD51A3DE367F376DB6C47C0D /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
-		E10C3531EF9920FC1980AB2E78AA55EB /* ARCL.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ARCL.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E1E347CEEE5468A8FD669A4FA76E22E9 /* Pods-ARKit+CoreLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation.debug.xcconfig"; sourceTree = "<group>"; };
-		E573CA62C7645E820A91FB8ABEF2120D /* LocationAnnotationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationAnnotationNode.swift; sourceTree = "<group>"; };
-		E7EF20C69548FD39E3926C2814BF8BB6 /* BaseTypes+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BaseTypes+Extensions.swift"; sourceTree = "<group>"; };
-		F5C968DF76CFBA2A2F19665B6DEB19C2 /* GeoTrackKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoTrackKit-prefix.pch"; sourceTree = "<group>"; };
-		F7AC15ACAEA226B83B357219FDE455D6 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
-		FB2BD95579B20698C27CF3FB6151416F /* GeoTrackEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackEvent.swift; path = GeoTrackKit/Core/GeoTrackEvent.swift; sourceTree = "<group>"; };
+		035CFDEE70A1718EE55CF18519149A0C /* ARCL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ARCL.modulemap; sourceTree = "<group>"; };
+		07D7356A18E7EC31F5931D35FA0B56C4 /* GeoTrackService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackService.swift; path = GeoTrackKit/Core/GeoTrackService.swift; sourceTree = "<group>"; };
+		0A13C7C86004B6335B211EE3F6A393DD /* DateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = GeoTrackKit/Core/Extension/DateExtension.swift; sourceTree = "<group>"; };
+		0A917093598A1532CFDC19ED82F7F624 /* GeoTrackAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackAnalyzer.swift; path = GeoTrackKit/Core/GeoTrackAnalyzer.swift; sourceTree = "<group>"; };
+		0F42DE99AD47CE2BF949846639C2CB3D /* GeoTrackKitErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackKitErrors.swift; path = GeoTrackKit/Core/GeoTrackKitErrors.swift; sourceTree = "<group>"; };
+		10BA12346382F793D998E0C00B0D7724 /* GeoTrackManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackManager.swift; path = GeoTrackKit/Core/GeoTrackManager.swift; sourceTree = "<group>"; };
+		10E3AECC1F8C38AFF4C4AA859B12BC75 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		1962ED7A158FBA81566A5C5C29B14D1F /* Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1A72A81514C3F9D40B0269615B69D01B /* GeoTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrack.swift; path = GeoTrackKit/Core/Models/GeoTrack.swift; sourceTree = "<group>"; };
+		1CE643C84E53EC68C1DABAF36A53C375 /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
+		1DE156FA73A7C7E218EC355DD9001EBC /* GeoTrack+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GeoTrack+Utilities.swift"; path = "GeoTrackKit/Core/Models/GeoTrack+Utilities.swift"; sourceTree = "<group>"; };
+		20C6D6029114C4D03DC4E22109192048 /* Pods-ARKit+CoreLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation.release.xcconfig"; sourceTree = "<group>"; };
+		24A85E959CC4024E7189BE71AFE46D84 /* Pods-ARKit+CoreLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		28293E6EA34609EA1E49FF98627D765B /* Pods-ARKit+CoreLocation-ARCLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation-ARCLTests.release.xcconfig"; sourceTree = "<group>"; };
+		294B117D48FB04306016B03AA2342E3B /* Pods-ARKit+CoreLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ARKit+CoreLocation-umbrella.h"; sourceTree = "<group>"; };
+		29AAC2D82C0F1E9F21126C03BDB1CE95 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
+		2ADDCC6203B3A15C00060D9435AFAC5A /* SceneLocationView+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SceneLocationView+ARSCNViewDelegate.swift"; path = "Sources/ARKit-CoreLocation/SceneLocationView+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		2C4373BDC4B2808F5B7B615C6186B1FB /* BaseTypes+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BaseTypes+Extensions.swift"; sourceTree = "<group>"; };
+		2F1F6E10ED83896210B9E37CEC7B70D4 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		2F5428F783D68BB31836D5AC2E455EB0 /* LocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		303610F98BADC92BFE11758A08D38508 /* Pods-ARKit+CoreLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ARKit+CoreLocation-dummy.m"; sourceTree = "<group>"; };
+		3648F7257602CE7E130CE98C64FD9CC7 /* UIGeoTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIGeoTrack.swift; path = GeoTrackKit/Core/Map/UIModels/UIGeoTrack.swift; sourceTree = "<group>"; };
+		373B2C2D0D06DCE6E013BF6A8B8F6AF4 /* SceneLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneLocationManager.swift; sourceTree = "<group>"; };
+		3B5B13E2C9922513B3A490DD43356603 /* CLLocationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = GeoTrackKit/Core/Extension/CLLocationExtension.swift; sourceTree = "<group>"; };
+		3CC17D78E24D234CB534FE018310C3C8 /* GeoTrackKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoTrackKit-dummy.m"; sourceTree = "<group>"; };
+		42C29C12A6549B56A36BF8016F1407FF /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		43D5112160F35E4C5F3E3D841D41A12B /* PolylineNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolylineNode.swift; sourceTree = "<group>"; };
+		49A41261E21F0EAC8C0BC9EB1D68BD64 /* Pods-ARKit+CoreLocation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ARKit+CoreLocation-Info.plist"; sourceTree = "<group>"; };
+		4AB39891C7172B2BCC145DABB440EC6C /* Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4DA076782D3DD63A6CDF0B3EADBB9406 /* SceneLocationViewEstimateDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationViewEstimateDelegate.swift; path = "Sources/ARKit-CoreLocation/SceneLocationViewEstimateDelegate.swift"; sourceTree = "<group>"; };
+		50FF93C4192771CBD14F61B3ADBB65DD /* ZoomDefining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomDefining.swift; path = GeoTrackKit/Core/Map/ZoomDefining.swift; sourceTree = "<group>"; };
+		52561807A81CC9DF092C92103A10D4C9 /* SceneLocationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationView.swift; path = "Sources/ARKit-CoreLocation/SceneLocationView.swift"; sourceTree = "<group>"; };
+		52E80180110080FFDD631859BBBC022F /* ARCL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-prefix.pch"; sourceTree = "<group>"; };
+		5C7CEB5787B1305411AA9E33C77601EC /* LocationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationNode.swift; sourceTree = "<group>"; };
+		5E93ECE363278C6C5FF98A56C87AE621 /* Pods_ARKit_CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ARKit_CoreLocation.framework; path = "Pods-ARKit+CoreLocation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8672EE3CC929B9D70C9CF113696A32 /* Pods-ARKit+CoreLocation-ARCLTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ARKit+CoreLocation-ARCLTests.modulemap"; sourceTree = "<group>"; };
+		606BD457ED4F633C6510AE51A2D3D39E /* GeoTrackKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeoTrackKit.modulemap; sourceTree = "<group>"; };
+		63A0875D1BAF20FE9320AF9358BABD9E /* ARKit_CoreLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARKit_CoreLocation.swift; path = "Sources/ARKit-CoreLocation/ARKit_CoreLocation.swift"; sourceTree = "<group>"; };
+		650F17B3825183447E0A364F72A65B27 /* Pods-ARKit+CoreLocation-ARCLTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ARKit+CoreLocation-ARCLTests-umbrella.h"; sourceTree = "<group>"; };
+		68920D043760F1251959B546646C2854 /* ARCL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARCL-dummy.m"; sourceTree = "<group>"; };
+		738DEF70BEEA2F3527D37A0B2025D9F7 /* Pods_ARKit_CoreLocation_ARCLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ARKit_CoreLocation_ARCLTests.framework; path = "Pods-ARKit+CoreLocation-ARCLTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76140C3477EA425724FC59A5FAEC0200 /* readme.jp.md */ = {isa = PBXFileReference; includeInIndex = 1; path = readme.jp.md; sourceTree = "<group>"; };
+		7C3E7D70A1D5DE8EA5E6A3ED3717D429 /* GeoTrackKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoTrackKit-prefix.pch"; sourceTree = "<group>"; };
+		80FA0EF9C5661A429F4CA47FA26E4831 /* GeoTrackKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoTrackKit.xcconfig; sourceTree = "<group>"; };
+		89D9D500CE38A4F0964016C14BEC2A57 /* Pods-ARKit+CoreLocation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ARKit+CoreLocation-acknowledgements.plist"; sourceTree = "<group>"; };
+		90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		9198131727667F5A36AEE40099328680 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9314A567C8B572B3F449C7709CB012CF /* DefaultMapZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultMapZoom.swift; path = GeoTrackKit/Core/Map/DefaultMapZoom.swift; sourceTree = "<group>"; };
+		94DBA49FF5E619473938F8CBEF6B6F5E /* GeoTrackKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GeoTrackKit.framework; path = GeoTrackKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F2D408A23568ECA4BA62D6AD6714B1 /* Pods-ARKit+CoreLocation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ARKit+CoreLocation-frameworks.sh"; sourceTree = "<group>"; };
+		98A58C95589D532DC63CE142968B1331 /* GeoTrackKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GeoTrackKit-Info.plist"; sourceTree = "<group>"; };
+		9C1224952B0BF85D8ACC02521C68DF24 /* GeoTrackEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackEvent.swift; path = GeoTrackKit/Core/GeoTrackEvent.swift; sourceTree = "<group>"; };
+		9C529C95D3F50B0C8A00401DEDF843B2 /* SceneLocationEstimate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneLocationEstimate.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A162FA8F109F3DBFEFD788DA62C674E8 /* ARCL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-umbrella.h"; sourceTree = "<group>"; };
+		A615DE63AED9AE3747BEF9A40040B4D5 /* Pods-ARKit+CoreLocation-ARCLTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ARKit+CoreLocation-ARCLTests-dummy.m"; sourceTree = "<group>"; };
+		A7328D00DA4802AB40A99D272FF0D40F /* GeoTrackEventLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackEventLog.swift; path = GeoTrackKit/Core/GeoTrackEventLog.swift; sourceTree = "<group>"; };
+		ABDC5807D130053EE50D9C4824CFD2FF /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
+		ADA1D2CB8CBD85F4E482A1BB6D4CC852 /* Pods-ARKit+CoreLocation-ARCLTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ARKit+CoreLocation-ARCLTests-Info.plist"; sourceTree = "<group>"; };
+		B0C783B75E5413A2DE480E2371D77E1A /* LocationAnnotationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationAnnotationNode.swift; sourceTree = "<group>"; };
+		B32606CC9AC2A1399D2A7453F1494C8E /* Pods-ARKit+CoreLocation-ARCLTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ARKit+CoreLocation-ARCLTests-frameworks.sh"; sourceTree = "<group>"; };
+		B7275A278409D792B848D6E0BCFEBE39 /* GeoTrackMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackMap.swift; path = GeoTrackKit/Core/Map/GeoTrackMap.swift; sourceTree = "<group>"; };
+		B7D060276B9FBD7432A298048F8BB6A5 /* ScalingScheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScalingScheme.swift; sourceTree = "<group>"; };
+		B9EA42C71A932C3248CAF43FB1E3A4AB /* ARCL.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ARCL.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BA858F72F0ADE4D151F82789F511D742 /* Pods-ARKit+CoreLocation-ARCLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ARKit+CoreLocation-ARCLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C37FC642472E2AEC7FE91FE0FBD44638 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C527DF1ED2F94157F54613B2AB87DAFA /* Pods-ARKit+CoreLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ARKit+CoreLocation.modulemap"; sourceTree = "<group>"; };
+		C57027C7A5C03C189DD87A5930E0CDE3 /* GeoTrackKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoTrackKit-umbrella.h"; sourceTree = "<group>"; };
+		C7ADEE321186A59406F16630332B9832 /* ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ARCL.framework; path = ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D0E793EC05E54810421743BB04F6B628 /* GeoTrackLocationEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackLocationEvent.swift; path = GeoTrackKit/Core/Models/GeoTrackLocationEvent.swift; sourceTree = "<group>"; };
+		DA272986C62108D971D1681FF887203E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		DADEF96DDDD623F8AE6C23F9D799D41F /* ARCL.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARCL.xcconfig; sourceTree = "<group>"; };
+		E1347FE8634EFEF495A6E93410A54877 /* ARCL-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ARCL-Info.plist"; sourceTree = "<group>"; };
+		E37D4D28E3DC1EBAA94763E4272A2AF9 /* GeoTrackState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoTrackState.swift; path = GeoTrackKit/Core/GeoTrackState.swift; sourceTree = "<group>"; };
+		EA3C19B9F9E55E7F99CE139944BCCEE4 /* Pods-ARKit+CoreLocation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ARKit+CoreLocation-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F4A7C894335A770BC3C5065D65975B04 /* LoggingFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggingFunctions.swift; path = GeoTrackKit/Core/LoggingFunctions.swift; sourceTree = "<group>"; };
+		F9006CC0EBFF0801B0AE775B6F61C519 /* Leg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Leg.swift; path = GeoTrackKit/Core/Models/Analyze/Leg.swift; sourceTree = "<group>"; };
+		FC835D812B89E11CB5F5B9DA5598B869 /* NumberExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberExtensions.swift; path = GeoTrackKit/Core/Extension/NumberExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EB3DC328F4DCB732C121A203D05763C /* Frameworks */ = {
+		3925DA8459A708FBC83C37D265940036 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9A4C3848E1C885CF97A70CEB45F8202 /* Foundation.framework in Frameworks */,
+				733709F69C4FD71039B6C15D4166A31F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EB6AE55B8E6DA17F87F31B20B91A0C0 /* Frameworks */ = {
+		8ECDEAEF900021B23B8304E556C3E483 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C47686D216D55E87DBA7FB62D80E29 /* ARKit.framework in Frameworks */,
-				CE743176E73F7D90A2007D97EF16C486 /* CoreLocation.framework in Frameworks */,
-				89E026FC76FE081B7E85463874FB7EDA /* Foundation.framework in Frameworks */,
-				F062348FA46FA75BF4AA9E51DF57AB3E /* MapKit.framework in Frameworks */,
-				DB68206AD34E0F80BD016A7686B84157 /* SceneKit.framework in Frameworks */,
-				238C3193523CD04B2A8B4B2D3E2946B5 /* UIKit.framework in Frameworks */,
+				248D87574ADA8476ED408210610584E0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70084C7092F4C745E9EBE88E80F00656 /* Frameworks */ = {
+		92E788E256039F2552397373BDA7888C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630A2F470C930B4D3C04ECFADF51F3DA /* Foundation.framework in Frameworks */,
+				EB9EB390D32A49EE83FEC6590D5DF950 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFE106E4B22548F5C220963CE793CCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A730A1B971E33622C9D4488329356CF6 /* CoreLocation.framework in Frameworks */,
+				2A6243914F2EB0715258F3976A85A3B4 /* Foundation.framework in Frameworks */,
+				17638CD98448242EB67F8B5B474D863C /* MapKit.framework in Frameworks */,
+				82D520695DF2A4B845AB64556F74D182 /* SceneKit.framework in Frameworks */,
+				28ECFF81377431686F8F6EC0ED747018 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07B818A8D64D1AB170A8807D975F97F3 /* GeoTrackKit */ = {
+		062AC6963BA67EDE56553417B0172E35 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				61DD6F13F9015C46CED231940EE8EA3D /* Core */,
-				E3A38118998ABF6D988F4EE111769D61 /* Support Files */,
+				A8C4A84598B390DF345E54ABAE1050B9 /* ARCL */,
 			);
-			name = GeoTrackKit;
-			path = GeoTrackKit;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		0DEB862365EA5F74D1CCE136753DC09E /* Location Manager */ = {
+		0C82C7F0E8C42DA35E732DAF635A4542 /* Pods-ARKit+CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
-				C6A94AD5F423B5E0AD5E860F3ADF8940 /* LocationManager.swift */,
-				0C537045D1388B6DB9760A55DE424DA7 /* SceneLocationEstimate.swift */,
-				996A453A4806CFBD7C0398C8F20B9800 /* SceneLocationEstimate+Extensions.swift */,
-				D23156A605D80DB4EDEF494E5CCC8442 /* SceneLocationManager.swift */,
-			);
-			name = "Location Manager";
-			path = "ARCL/Source/Location Manager";
-			sourceTree = "<group>";
-		};
-		0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D4DC2673D61F82023A75FD920E4A2251 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2606D74C07F1ACF6A70BA0EECDB2B147 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CEB44D82BCAEFF76A7BEF1DCBA8E30B /* ARCL.modulemap */,
-				54BF33596D2F47F9360A5D182FD36494 /* ARCL.xcconfig */,
-				637155CB678DAAAB51A3853B1B91C2CB /* ARCL-dummy.m */,
-				064876F1614121A977987E29CEFAFA75 /* ARCL-prefix.pch */,
-				BF097FAD3A0AEA3B21C3F33603B259A5 /* ARCL-umbrella.h */,
-				59CE3D8C4F6E75CBE36D02EE900A80F4 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/ARCL";
-			sourceTree = "<group>";
-		};
-		3B93F1E1A417B09DC0DA25786EC8BAD2 /* Pods-ARKit+CoreLocation */ = {
-			isa = PBXGroup;
-			children = (
-				1D74A47AD7FB1304DC0FF2D215FCE1B4 /* Info.plist */,
-				14020CD2FADC6360BEB98E8F9A6A0C2F /* Pods-ARKit+CoreLocation.modulemap */,
-				A4FF28CC89209C8800BB15011F5F0604 /* Pods-ARKit+CoreLocation-acknowledgements.markdown */,
-				1DE8136DA93CFFFCEBB235D0B18D7B12 /* Pods-ARKit+CoreLocation-acknowledgements.plist */,
-				D33B939D8285598F2C92F217F8E11CC6 /* Pods-ARKit+CoreLocation-dummy.m */,
-				9F26BAB6A40C4B6A19E747B3F459C8FF /* Pods-ARKit+CoreLocation-frameworks.sh */,
-				B7A0E4E6F76C3400D5E6906D558B8FB8 /* Pods-ARKit+CoreLocation-resources.sh */,
-				1569D8AB75F6B4E0C4BB77FF9E53D61B /* Pods-ARKit+CoreLocation-umbrella.h */,
-				E1E347CEEE5468A8FD669A4FA76E22E9 /* Pods-ARKit+CoreLocation.debug.xcconfig */,
-				49AF8AA326E76711FB29567A31A81D88 /* Pods-ARKit+CoreLocation.release.xcconfig */,
+				C527DF1ED2F94157F54613B2AB87DAFA /* Pods-ARKit+CoreLocation.modulemap */,
+				EA3C19B9F9E55E7F99CE139944BCCEE4 /* Pods-ARKit+CoreLocation-acknowledgements.markdown */,
+				89D9D500CE38A4F0964016C14BEC2A57 /* Pods-ARKit+CoreLocation-acknowledgements.plist */,
+				303610F98BADC92BFE11758A08D38508 /* Pods-ARKit+CoreLocation-dummy.m */,
+				94F2D408A23568ECA4BA62D6AD6714B1 /* Pods-ARKit+CoreLocation-frameworks.sh */,
+				49A41261E21F0EAC8C0BC9EB1D68BD64 /* Pods-ARKit+CoreLocation-Info.plist */,
+				294B117D48FB04306016B03AA2342E3B /* Pods-ARKit+CoreLocation-umbrella.h */,
+				24A85E959CC4024E7189BE71AFE46D84 /* Pods-ARKit+CoreLocation.debug.xcconfig */,
+				20C6D6029114C4D03DC4E22109192048 /* Pods-ARKit+CoreLocation.release.xcconfig */,
 			);
 			name = "Pods-ARKit+CoreLocation";
 			path = "Target Support Files/Pods-ARKit+CoreLocation";
 			sourceTree = "<group>";
 		};
-		4E584CC6EA75C0ED1AAE1905BEFBB040 /* Extensions */ = {
+		186C0E7F179738F47BE5B438F6EC5C3D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E7EF20C69548FD39E3926C2814BF8BB6 /* BaseTypes+Extensions.swift */,
-				41AC42FAC9776DAEF8E1433EAD2A627D /* CGPoint+Extensions.swift */,
-				36BB622099672CA8E3974ECE2836DF8C /* CLLocation+Extensions.swift */,
-				F7AC15ACAEA226B83B357219FDE455D6 /* FloatingPoint+Radians.swift */,
-				D76ED9BAAD51A3DE367F376DB6C47C0D /* SCNNode+Extensions.swift */,
-				0DA43AFA5708B9C91D9B5BDC478DDE75 /* SCNVector3+Extensions.swift */,
+				035CFDEE70A1718EE55CF18519149A0C /* ARCL.modulemap */,
+				DADEF96DDDD623F8AE6C23F9D799D41F /* ARCL.xcconfig */,
+				68920D043760F1251959B546646C2854 /* ARCL-dummy.m */,
+				E1347FE8634EFEF495A6E93410A54877 /* ARCL-Info.plist */,
+				52E80180110080FFDD631859BBBC022F /* ARCL-prefix.pch */,
+				A162FA8F109F3DBFEFD788DA62C674E8 /* ARCL-umbrella.h */,
 			);
-			name = Extensions;
-			path = ARCL/Source/Extensions;
+			name = "Support Files";
+			path = "Pods/Target Support Files/ARCL";
 			sourceTree = "<group>";
 		};
-		61DD6F13F9015C46CED231940EE8EA3D /* Core */ = {
+		35EE3E6407CDAB35F1BFB89C4DD19D5C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1658B998833FCE123F70E4E3C9B9C42C /* CLLocationExtension.swift */,
-				B0A85C8D18E8A03ABB41D7AEFFF5D99E /* DateExtension.swift */,
-				9229D74E11704C0D081DF14BBE8C7867 /* DefaultMapZoom.swift */,
-				2A993D497EE13685EBCEF04C7971D217 /* GeoTrack.swift */,
-				AAC15A851A5DFDD9CB1DB5FF2CC86D7F /* GeoTrack+Utilities.swift */,
-				32274F2C46D1C3BB2318B6FE8BE0A7AF /* GeoTrackAnalyzer.swift */,
-				FB2BD95579B20698C27CF3FB6151416F /* GeoTrackEvent.swift */,
-				8A26F8C3D9642591F0A41DF7DB5CEF72 /* GeoTrackEventLog.swift */,
-				522B7A4B82CD993D3EFA6C563E8F454F /* GeoTrackKitErrors.swift */,
-				611FDCF1605F07C3B33E15A4CF180ADC /* GeoTrackLocationEvent.swift */,
-				91D7B883A32F0D55655DBE1B12459BE6 /* GeoTrackManager.swift */,
-				94AE493F62A41CD0CB7E3F976B18ACCB /* GeoTrackMap.swift */,
-				715DB62CF59BA635E7C6756CBC76327A /* GeoTrackService.swift */,
-				C49D9CF1D35C4F1683CFB97515E8FF0D /* GeoTrackState.swift */,
-				07D139E4A483F5C9FF7317D529E115E3 /* Leg.swift */,
-				3767A9B6F38F668E88BC3FA9938E987A /* LoggingFunctions.swift */,
-				6282786F09AA81D743A559F94397CDC8 /* NumberExtensions.swift */,
-				97D1919205A6F11A72072A40AE91AA9B /* UIGeoTrack.swift */,
-				6D2903F16CF3CE0EFAFE35D0F9DA69EB /* ZoomDefining.swift */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		69E115CCF0943DC9ECE24377D1EEE4E7 /* ARCL */ = {
-			isa = PBXGroup;
-			children = (
-				028C46186898A66C66EBC7AA6B1AD7EC /* SceneLocationView.swift */,
-				4F27CBFED08267690AB14B8F2285AD17 /* SceneLocationView+Extensions.swift */,
-				1A17A47E6074E3B666A78401600B58E6 /* SceneLocationViewEstimateDelegate.swift */,
-				4E584CC6EA75C0ED1AAE1905BEFBB040 /* Extensions */,
-				0DEB862365EA5F74D1CCE136753DC09E /* Location Manager */,
-				B66E1E4AD87A5F0829362869F085832C /* Nodes */,
-				C49E0C5308400FE695A6E89ADBE0ABAC /* Pod */,
-				2606D74C07F1ACF6A70BA0EECDB2B147 /* Support Files */,
-			);
-			name = ARCL;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				C52D675150BFF311C502EB6902211EB1 /* Development Pods */,
-				0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */,
-				BC689858490D58E02AFB13FA1A1EA824 /* Pods */,
-				E1E96A767486A3805940C3FA7E9A47F6 /* Products */,
-				97E9381D658B8FC5E881E17582CF9A82 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		97E9381D658B8FC5E881E17582CF9A82 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3B93F1E1A417B09DC0DA25786EC8BAD2 /* Pods-ARKit+CoreLocation */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B66E1E4AD87A5F0829362869F085832C /* Nodes */ = {
-			isa = PBXGroup;
-			children = (
-				E573CA62C7645E820A91FB8ABEF2120D /* LocationAnnotationNode.swift */,
-				3E9F79FB3DD067ECA958AFB89E4EED90 /* LocationNode.swift */,
-				BB844BEA3F09AE54C50AA6A06BE67820 /* PolylineNode.swift */,
-				B96E7BD198DAF3B24E3BA871D2D0D4B3 /* ScalingScheme.swift */,
-			);
-			name = Nodes;
-			path = ARCL/Source/Nodes;
-			sourceTree = "<group>";
-		};
-		BC689858490D58E02AFB13FA1A1EA824 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				07B818A8D64D1AB170A8807D975F97F3 /* GeoTrackKit */,
+				3BD58C5545215B90DB3586149AB517F6 /* GeoTrackKit */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C49E0C5308400FE695A6E89ADBE0ABAC /* Pod */ = {
+		39F94E954CF60C448FBBAD1A623F5122 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				E10C3531EF9920FC1980AB2E78AA55EB /* ARCL.podspec */,
-				32BC08E327E74EC725DB6E8EC868ADA1 /* LICENSE */,
-				22D49B6952BC3818A4F553724BB91D50 /* readme.jp.md */,
+				B9EA42C71A932C3248CAF43FB1E3A4AB /* ARCL.podspec */,
+				C37FC642472E2AEC7FE91FE0FBD44638 /* LICENSE */,
+				76140C3477EA425724FC59A5FAEC0200 /* readme.jp.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		C52D675150BFF311C502EB6902211EB1 /* Development Pods */ = {
+		3BD58C5545215B90DB3586149AB517F6 /* GeoTrackKit */ = {
 			isa = PBXGroup;
 			children = (
-				69E115CCF0943DC9ECE24377D1EEE4E7 /* ARCL */,
+				83749924C573216E5E2A9B1FC733A4B1 /* Core */,
+				6B3E2CCECA1088B84CA6BC0F3EC677D9 /* Support Files */,
 			);
-			name = "Development Pods";
+			name = GeoTrackKit;
+			path = GeoTrackKit;
 			sourceTree = "<group>";
 		};
-		D4DC2673D61F82023A75FD920E4A2251 /* iOS */ = {
+		593B8BFE181FC63B034A8FA91F946F4A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8448C8D3B02A33C992689E219E119203 /* ARKit.framework */,
-				893DA6918C0ED7EBDEE9A9C24940A7C5 /* CoreLocation.framework */,
-				D73571F4B2281E0098DC76443D509656 /* Foundation.framework */,
-				5C77626DC61CC820DD862D736C3A8262 /* MapKit.framework */,
-				C7175760E70DBC0C749A613721BD92E3 /* SceneKit.framework */,
-				A9C167BE81500CB0164A60D9EEFFBD72 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E1E96A767486A3805940C3FA7E9A47F6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AA4844D4BE9E959F39D4510860B3554E /* ARCL.framework */,
-				A7394B31D1C8B5B74B296696309FE73F /* GeoTrackKit.framework */,
-				11AFDEEF38FE1366F08305D21B318F8E /* Pods_ARKit_CoreLocation.framework */,
+				C7ADEE321186A59406F16630332B9832 /* ARCL.framework */,
+				94DBA49FF5E619473938F8CBEF6B6F5E /* GeoTrackKit.framework */,
+				5E93ECE363278C6C5FF98A56C87AE621 /* Pods_ARKit_CoreLocation.framework */,
+				738DEF70BEEA2F3527D37A0B2025D9F7 /* Pods_ARKit_CoreLocation_ARCLTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E3A38118998ABF6D988F4EE111769D61 /* Support Files */ = {
+		5A3F30C58191A64D12509CD5582B0C5E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				432A7B01A9F2186EF53E226A523AB586 /* GeoTrackKit.modulemap */,
-				31008223054A38C53258039BD66044B9 /* GeoTrackKit.xcconfig */,
-				918F3FAD51F6FB18A35B44CE93CB3B5C /* GeoTrackKit-dummy.m */,
-				F5C968DF76CFBA2A2F19665B6DEB19C2 /* GeoTrackKit-prefix.pch */,
-				86030D53EFCA3D96AEA84D875121052C /* GeoTrackKit-umbrella.h */,
-				CC0D2C53626AB8426BA13C420F5B1D21 /* Info.plist */,
+				DA272986C62108D971D1681FF887203E /* CoreLocation.framework */,
+				CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */,
+				1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */,
+				90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */,
+				9198131727667F5A36AEE40099328680 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6B3E2CCECA1088B84CA6BC0F3EC677D9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				606BD457ED4F633C6510AE51A2D3D39E /* GeoTrackKit.modulemap */,
+				80FA0EF9C5661A429F4CA47FA26E4831 /* GeoTrackKit.xcconfig */,
+				3CC17D78E24D234CB534FE018310C3C8 /* GeoTrackKit-dummy.m */,
+				98A58C95589D532DC63CE142968B1331 /* GeoTrackKit-Info.plist */,
+				7C3E7D70A1D5DE8EA5E6A3ED3717D429 /* GeoTrackKit-prefix.pch */,
+				C57027C7A5C03C189DD87A5930E0CDE3 /* GeoTrackKit-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GeoTrackKit";
 			sourceTree = "<group>";
 		};
+		83749924C573216E5E2A9B1FC733A4B1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3B5B13E2C9922513B3A490DD43356603 /* CLLocationExtension.swift */,
+				0A13C7C86004B6335B211EE3F6A393DD /* DateExtension.swift */,
+				9314A567C8B572B3F449C7709CB012CF /* DefaultMapZoom.swift */,
+				1A72A81514C3F9D40B0269615B69D01B /* GeoTrack.swift */,
+				1DE156FA73A7C7E218EC355DD9001EBC /* GeoTrack+Utilities.swift */,
+				0A917093598A1532CFDC19ED82F7F624 /* GeoTrackAnalyzer.swift */,
+				9C1224952B0BF85D8ACC02521C68DF24 /* GeoTrackEvent.swift */,
+				A7328D00DA4802AB40A99D272FF0D40F /* GeoTrackEventLog.swift */,
+				0F42DE99AD47CE2BF949846639C2CB3D /* GeoTrackKitErrors.swift */,
+				D0E793EC05E54810421743BB04F6B628 /* GeoTrackLocationEvent.swift */,
+				10BA12346382F793D998E0C00B0D7724 /* GeoTrackManager.swift */,
+				B7275A278409D792B848D6E0BCFEBE39 /* GeoTrackMap.swift */,
+				07D7356A18E7EC31F5931D35FA0B56C4 /* GeoTrackService.swift */,
+				E37D4D28E3DC1EBAA94763E4272A2AF9 /* GeoTrackState.swift */,
+				F9006CC0EBFF0801B0AE775B6F61C519 /* Leg.swift */,
+				F4A7C894335A770BC3C5065D65975B04 /* LoggingFunctions.swift */,
+				FC835D812B89E11CB5F5B9DA5598B869 /* NumberExtensions.swift */,
+				3648F7257602CE7E130CE98C64FD9CC7 /* UIGeoTrack.swift */,
+				50FF93C4192771CBD14F61B3ADBB65DD /* ZoomDefining.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A8C4A84598B390DF345E54ABAE1050B9 /* ARCL */ = {
+			isa = PBXGroup;
+			children = (
+				63A0875D1BAF20FE9320AF9358BABD9E /* ARKit_CoreLocation.swift */,
+				52561807A81CC9DF092C92103A10D4C9 /* SceneLocationView.swift */,
+				2ADDCC6203B3A15C00060D9435AFAC5A /* SceneLocationView+ARSCNViewDelegate.swift */,
+				4DA076782D3DD63A6CDF0B3EADBB9406 /* SceneLocationViewEstimateDelegate.swift */,
+				E9C938E7DA18536EA7D18FF53646DE29 /* Extensions */,
+				E203371764BB06484426957865EEA631 /* Location Manager */,
+				FEA0BCFCC030F214CA92F6C162FC98F7 /* Nodes */,
+				39F94E954CF60C448FBBAD1A623F5122 /* Pod */,
+				186C0E7F179738F47BE5B438F6EC5C3D /* Support Files */,
+			);
+			name = ARCL;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		ADED7BB5290712EF593CD04FEF5D6060 /* Pods-ARKit+CoreLocation-ARCLTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F8672EE3CC929B9D70C9CF113696A32 /* Pods-ARKit+CoreLocation-ARCLTests.modulemap */,
+				1962ED7A158FBA81566A5C5C29B14D1F /* Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.markdown */,
+				4AB39891C7172B2BCC145DABB440EC6C /* Pods-ARKit+CoreLocation-ARCLTests-acknowledgements.plist */,
+				A615DE63AED9AE3747BEF9A40040B4D5 /* Pods-ARKit+CoreLocation-ARCLTests-dummy.m */,
+				B32606CC9AC2A1399D2A7453F1494C8E /* Pods-ARKit+CoreLocation-ARCLTests-frameworks.sh */,
+				ADA1D2CB8CBD85F4E482A1BB6D4CC852 /* Pods-ARKit+CoreLocation-ARCLTests-Info.plist */,
+				650F17B3825183447E0A364F72A65B27 /* Pods-ARKit+CoreLocation-ARCLTests-umbrella.h */,
+				BA858F72F0ADE4D151F82789F511D742 /* Pods-ARKit+CoreLocation-ARCLTests.debug.xcconfig */,
+				28293E6EA34609EA1E49FF98627D765B /* Pods-ARKit+CoreLocation-ARCLTests.release.xcconfig */,
+			);
+			name = "Pods-ARKit+CoreLocation-ARCLTests";
+			path = "Target Support Files/Pods-ARKit+CoreLocation-ARCLTests";
+			sourceTree = "<group>";
+		};
+		B94D7768568A9992200DB461E8CF687F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A3F30C58191A64D12509CD5582B0C5E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				062AC6963BA67EDE56553417B0172E35 /* Development Pods */,
+				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
+				35EE3E6407CDAB35F1BFB89C4DD19D5C /* Pods */,
+				593B8BFE181FC63B034A8FA91F946F4A /* Products */,
+				D8A61F9FB0883A8779A588F8E717FAE1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D8A61F9FB0883A8779A588F8E717FAE1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C82C7F0E8C42DA35E732DAF635A4542 /* Pods-ARKit+CoreLocation */,
+				ADED7BB5290712EF593CD04FEF5D6060 /* Pods-ARKit+CoreLocation-ARCLTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E203371764BB06484426957865EEA631 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2F5428F783D68BB31836D5AC2E455EB0 /* LocationManager.swift */,
+				9C529C95D3F50B0C8A00401DEDF843B2 /* SceneLocationEstimate.swift */,
+				1CE643C84E53EC68C1DABAF36A53C375 /* SceneLocationEstimate+Extensions.swift */,
+				373B2C2D0D06DCE6E013BF6A8B8F6AF4 /* SceneLocationManager.swift */,
+			);
+			name = "Location Manager";
+			path = "Sources/ARKit-CoreLocation/Location Manager";
+			sourceTree = "<group>";
+		};
+		E9C938E7DA18536EA7D18FF53646DE29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C4373BDC4B2808F5B7B615C6186B1FB /* BaseTypes+Extensions.swift */,
+				42C29C12A6549B56A36BF8016F1407FF /* CGPoint+Extensions.swift */,
+				10E3AECC1F8C38AFF4C4AA859B12BC75 /* CLLocation+Extensions.swift */,
+				29AAC2D82C0F1E9F21126C03BDB1CE95 /* FloatingPoint+Radians.swift */,
+				ABDC5807D130053EE50D9C4824CFD2FF /* SCNNode+Extensions.swift */,
+				2F1F6E10ED83896210B9E37CEC7B70D4 /* SCNVector3+Extensions.swift */,
+			);
+			name = Extensions;
+			path = "Sources/ARKit-CoreLocation/Extensions";
+			sourceTree = "<group>";
+		};
+		FEA0BCFCC030F214CA92F6C162FC98F7 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				B0C783B75E5413A2DE480E2371D77E1A /* LocationAnnotationNode.swift */,
+				5C7CEB5787B1305411AA9E33C77601EC /* LocationNode.swift */,
+				43D5112160F35E4C5F3E3D841D41A12B /* PolylineNode.swift */,
+				B7D060276B9FBD7432A298048F8BB6A5 /* ScalingScheme.swift */,
+			);
+			name = Nodes;
+			path = "Sources/ARKit-CoreLocation/Nodes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1B5AD1BC324D1BA739015CC8EE5D0F6E /* Headers */ = {
+		11AB244F89859C5C0F36F163FE3F795E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C635958A0B693E919C7D2C9BAA23775 /* ARCL-umbrella.h in Headers */,
+				138208E3B3E894F69715FFB65DD040C1 /* Pods-ARKit+CoreLocation-ARCLTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		518AA7190524CEBCB56C9E1A65D83C42 /* Headers */ = {
+		AF7F5A11822B990A71E65071C8064CF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3E2BCCDC0E3F0EBD5E7815F35AFF320 /* GeoTrackKit-umbrella.h in Headers */,
+				788415EEFA68D8E3958A1CAB215F43EB /* ARCL-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C3BCB9B0AB806B08AC69999F6547CAA /* Headers */ = {
+		C461440BF12E4FDE0E4126AC93C2F14E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA0B8C325E3522192D2BB46AFED6605F /* Pods-ARKit+CoreLocation-umbrella.h in Headers */,
+				B8DA035327D39C438A316A2D883DC594 /* Pods-ARKit+CoreLocation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03D7854425E133497981885FE4B2375 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACEDEA8F59F3AE94F99F21925CEC2371 /* GeoTrackKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3568851C91A5B933C59071F1CA3C2315 /* ARCL */ = {
+		0EB8F046F03E0207CA9F8E6BE64CB428 /* Pods-ARKit+CoreLocation-ARCLTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 031734D177D1141320B0ED490AE26240 /* Build configuration list for PBXNativeTarget "ARCL" */;
+			buildConfigurationList = A3CB512161BF1283C5BAD4E5E72C2DB9 /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation-ARCLTests" */;
 			buildPhases = (
-				1B5AD1BC324D1BA739015CC8EE5D0F6E /* Headers */,
-				0C1EE7242C7E36220B9AA7E13F4BDD25 /* Sources */,
-				5EB6AE55B8E6DA17F87F31B20B91A0C0 /* Frameworks */,
-				7C9BE07B9BB7DCD58F5E05C16214CBFB /* Resources */,
+				11AB244F89859C5C0F36F163FE3F795E /* Headers */,
+				ECEC42C3A768A20ADFB54D0BA482D9BE /* Sources */,
+				92E788E256039F2552397373BDA7888C /* Frameworks */,
+				2BB0EE407DFD33CB8C546BFFFFF8912E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1119D2437B7B428FFF6911CF1408B2DC /* PBXTargetDependency */,
+				5DBEE62FDDA8AAEA6BC51B67EE277C2B /* PBXTargetDependency */,
 			);
-			name = ARCL;
-			productName = ARCL;
-			productReference = AA4844D4BE9E959F39D4510860B3554E /* ARCL.framework */;
+			name = "Pods-ARKit+CoreLocation-ARCLTests";
+			productName = "Pods-ARKit+CoreLocation-ARCLTests";
+			productReference = 738DEF70BEEA2F3527D37A0B2025D9F7 /* Pods_ARKit_CoreLocation_ARCLTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AAF625B221F9718DFD19AB30D5C05A51 /* GeoTrackKit */ = {
+		4E1F0A83DA8B9DC95EB479D88999BE67 /* GeoTrackKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0199A4A2C425079BFCD013A7E0964F52 /* Build configuration list for PBXNativeTarget "GeoTrackKit" */;
+			buildConfigurationList = 21CDA4F9C2B7CD47659EE300D11D436A /* Build configuration list for PBXNativeTarget "GeoTrackKit" */;
 			buildPhases = (
-				518AA7190524CEBCB56C9E1A65D83C42 /* Headers */,
-				7DA2F8CC914B51EF8FBE0ECE82CFCE6F /* Sources */,
-				70084C7092F4C745E9EBE88E80F00656 /* Frameworks */,
-				3B27383B15BA6E115C8613F28C401B6D /* Resources */,
+				E03D7854425E133497981885FE4B2375 /* Headers */,
+				268D92776CBB8EA8A66457B36FEEA212 /* Sources */,
+				8ECDEAEF900021B23B8304E556C3E483 /* Frameworks */,
+				554011BCCA6ECD3A1A8E55D0A4207BC9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -459,73 +520,99 @@
 			);
 			name = GeoTrackKit;
 			productName = GeoTrackKit;
-			productReference = A7394B31D1C8B5B74B296696309FE73F /* GeoTrackKit.framework */;
+			productReference = 94DBA49FF5E619473938F8CBEF6B6F5E /* GeoTrackKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C6A271E36DFDAFC5701904242059B867 /* Pods-ARKit+CoreLocation */ = {
+		62C241DCC87D30DEFC67B68471C95E6E /* Pods-ARKit+CoreLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C177062EE11A5FACE65BFD4A8DF907B /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation" */;
+			buildConfigurationList = D4C06135FF08ED1BC1043301ABDD143E /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation" */;
 			buildPhases = (
-				5C3BCB9B0AB806B08AC69999F6547CAA /* Headers */,
-				08E06D9AE240BAF326D4CA19F1BD5AC9 /* Sources */,
-				3EB3DC328F4DCB732C121A203D05763C /* Frameworks */,
-				49A447398CC5A309DB41D6B9F2AC21F2 /* Resources */,
+				C461440BF12E4FDE0E4126AC93C2F14E /* Headers */,
+				08019FA559D763CF6C35E038E97AE2A6 /* Sources */,
+				3925DA8459A708FBC83C37D265940036 /* Frameworks */,
+				D7D5C52281E29A2FD6A309CADBD3C061 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3B62FBFAC87EA780E856DBFA3580A45A /* PBXTargetDependency */,
-				AB44E697AF409C008985B2E1ACAA74D5 /* PBXTargetDependency */,
+				F53191D83F7BAAE3CE126B8AFF9D6254 /* PBXTargetDependency */,
+				722996F684C20CF54FD6E88C8095A07C /* PBXTargetDependency */,
 			);
 			name = "Pods-ARKit+CoreLocation";
 			productName = "Pods-ARKit+CoreLocation";
-			productReference = 11AFDEEF38FE1366F08305D21B318F8E /* Pods_ARKit_CoreLocation.framework */;
+			productReference = 5E93ECE363278C6C5FF98A56C87AE621 /* Pods_ARKit_CoreLocation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3ADA08306546DA207812F2C1BFC474D /* Build configuration list for PBXNativeTarget "ARCL" */;
+			buildPhases = (
+				AF7F5A11822B990A71E65071C8064CF1 /* Headers */,
+				B7DD15D2F4ED822610B52D3CDF3B41BF /* Sources */,
+				DAFE106E4B22548F5C220963CE793CCE /* Frameworks */,
+				B6AAAA55E7E28604E217DDD8278CAAF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARCL;
+			productName = ARCL;
+			productReference = C7ADEE321186A59406F16630332B9832 /* ARCL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E1E96A767486A3805940C3FA7E9A47F6 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 593B8BFE181FC63B034A8FA91F946F4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3568851C91A5B933C59071F1CA3C2315 /* ARCL */,
-				AAF625B221F9718DFD19AB30D5C05A51 /* GeoTrackKit */,
-				C6A271E36DFDAFC5701904242059B867 /* Pods-ARKit+CoreLocation */,
+				BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */,
+				4E1F0A83DA8B9DC95EB479D88999BE67 /* GeoTrackKit */,
+				62C241DCC87D30DEFC67B68471C95E6E /* Pods-ARKit+CoreLocation */,
+				0EB8F046F03E0207CA9F8E6BE64CB428 /* Pods-ARKit+CoreLocation-ARCLTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3B27383B15BA6E115C8613F28C401B6D /* Resources */ = {
+		2BB0EE407DFD33CB8C546BFFFFF8912E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		49A447398CC5A309DB41D6B9F2AC21F2 /* Resources */ = {
+		554011BCCA6ECD3A1A8E55D0A4207BC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C9BE07B9BB7DCD58F5E05C16214CBFB /* Resources */ = {
+		B6AAAA55E7E28604E217DDD8278CAAF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D5C52281E29A2FD6A309CADBD3C061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -535,118 +622,111 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08E06D9AE240BAF326D4CA19F1BD5AC9 /* Sources */ = {
+		08019FA559D763CF6C35E038E97AE2A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCAA83370BABD7F83DF7C5CBE96A128 /* Pods-ARKit+CoreLocation-dummy.m in Sources */,
+				4443543B1C58AAE8587F5C69BEE9CDB9 /* Pods-ARKit+CoreLocation-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C1EE7242C7E36220B9AA7E13F4BDD25 /* Sources */ = {
+		268D92776CBB8EA8A66457B36FEEA212 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E66AFE0835DCD2508C22F134C161AAB /* ARCL-dummy.m in Sources */,
-				C6B599B2C0335A556171C48A500B77E6 /* BaseTypes+Extensions.swift in Sources */,
-				A746A27DE654F6615BFAC0EF1CD2B8C2 /* CGPoint+Extensions.swift in Sources */,
-				36C0217846A912792B87BC4ABEFFA2D4 /* CLLocation+Extensions.swift in Sources */,
-				A7A60539C02AED30A9664BF28C2AB157 /* FloatingPoint+Radians.swift in Sources */,
-				8D2425CF38786CDE783BC9EE466B4C49 /* LocationAnnotationNode.swift in Sources */,
-				952576B64DF01049CC3722780AEEA192 /* LocationManager.swift in Sources */,
-				D614825F607EA719418943BEB22720E0 /* LocationNode.swift in Sources */,
-				14F8B803A452F6211661CD2CA55DD95B /* PolylineNode.swift in Sources */,
-				784E6F12105BE3307170A3CE4528F3A3 /* ScalingScheme.swift in Sources */,
-				507E5E52A5ECED1AEDC26C99456CCA74 /* SceneLocationEstimate+Extensions.swift in Sources */,
-				5305A3B9017C5A746DDD7E6B4B6BEF72 /* SceneLocationEstimate.swift in Sources */,
-				E1A271A55B1157AC616F72D5F20CB80F /* SceneLocationManager.swift in Sources */,
-				58C6E49FC2A5410629A796D412F7895F /* SceneLocationView+Extensions.swift in Sources */,
-				2E98CB87DFB3923A1157AA8C58C87B29 /* SceneLocationView.swift in Sources */,
-				C59F706FAC54CC69F98BB81A780A2518 /* SceneLocationViewEstimateDelegate.swift in Sources */,
-				C0C2451F8287DED4E2DBFF23D5442C41 /* SCNNode+Extensions.swift in Sources */,
-				5BFF26EB7BFD1D9E568F9BAE6128E801 /* SCNVector3+Extensions.swift in Sources */,
+				F08FEF886011B4404ED20A7C06818862 /* CLLocationExtension.swift in Sources */,
+				A5CC89F3ECB62589702D6C16C3BEB877 /* DateExtension.swift in Sources */,
+				C2D37286706058739D85B807FC99622D /* DefaultMapZoom.swift in Sources */,
+				F50005FA5C3F3B0E9A977D47DA60BC9D /* GeoTrack+Utilities.swift in Sources */,
+				88EC0EF6035128C80380A123B8307759 /* GeoTrack.swift in Sources */,
+				07FE0E3BE43DE7AB4E9342D504C47FDC /* GeoTrackAnalyzer.swift in Sources */,
+				BA597D62AE7978413001BD997BD52AEB /* GeoTrackEvent.swift in Sources */,
+				F20DE046CA8DE67BCFA98D0663328A30 /* GeoTrackEventLog.swift in Sources */,
+				9B63C1981FDB5DD454C7A5B7509A711E /* GeoTrackKit-dummy.m in Sources */,
+				1DE0F261A266C4CBC655880684FAA023 /* GeoTrackKitErrors.swift in Sources */,
+				D0DA44FD57B5A46FCAE6252ACDBD380E /* GeoTrackLocationEvent.swift in Sources */,
+				98DF772189E08D0294BF47CAA8A42015 /* GeoTrackManager.swift in Sources */,
+				DC63A53D4F28CFEF5B624D649532BB70 /* GeoTrackMap.swift in Sources */,
+				F772FB61F6A3D37BC401493945B7E145 /* GeoTrackService.swift in Sources */,
+				D094F2E41336133A52BA77F44EE69030 /* GeoTrackState.swift in Sources */,
+				48B7B32C071135376DFED68A8A463C7A /* Leg.swift in Sources */,
+				A94E82039E0A6434E59D409CCC7CC00B /* LoggingFunctions.swift in Sources */,
+				58667F079680719B9961FB3CDB270013 /* NumberExtensions.swift in Sources */,
+				B757ADBC97058409800DD7819F832042 /* UIGeoTrack.swift in Sources */,
+				9C518C431C34536A978971891033AC84 /* ZoomDefining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7DA2F8CC914B51EF8FBE0ECE82CFCE6F /* Sources */ = {
+		B7DD15D2F4ED822610B52D3CDF3B41BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B055EF0BB8EA452469756E4B3380F7C /* CLLocationExtension.swift in Sources */,
-				190859FAD0E32E36C3331EE84F2D6BD9 /* DateExtension.swift in Sources */,
-				CBBC808ABAA93D77DCE027EF4CEF4213 /* DefaultMapZoom.swift in Sources */,
-				3775D5F7E08BB4081A909B116556CED8 /* GeoTrack+Utilities.swift in Sources */,
-				E5A4B22CDBB18CBE58344CC5084303CF /* GeoTrack.swift in Sources */,
-				342DBC52D0328C845BC194EC554116CD /* GeoTrackAnalyzer.swift in Sources */,
-				FC94417D3F18D3A26ADE3B419580A285 /* GeoTrackEvent.swift in Sources */,
-				907FB1E846761D99EF81613823B3CFCB /* GeoTrackEventLog.swift in Sources */,
-				5EBC633C0C9EC886B5344700F2ED99F4 /* GeoTrackKit-dummy.m in Sources */,
-				1A1D714CA84B010DB05F5D2D022AF065 /* GeoTrackKitErrors.swift in Sources */,
-				88147B25912D2BD4EF39B767D47CEDE8 /* GeoTrackLocationEvent.swift in Sources */,
-				0B3489218F834ED22224DFEEC18CD822 /* GeoTrackManager.swift in Sources */,
-				61B71FB061AF6ADF0475AC426AC0D338 /* GeoTrackMap.swift in Sources */,
-				5D3214E139E2A132F6746D67C5933B96 /* GeoTrackService.swift in Sources */,
-				F610F37727A314482C11F16F9D75C4A3 /* GeoTrackState.swift in Sources */,
-				70CC76978A935744DC663BC14562DAA3 /* Leg.swift in Sources */,
-				AB6586B1A78BEBC3ABF17611A0F2EA61 /* LoggingFunctions.swift in Sources */,
-				02409B80871103A31384C822522D42C4 /* NumberExtensions.swift in Sources */,
-				3DAF682C854589D1C6DDA73CF61A775C /* UIGeoTrack.swift in Sources */,
-				1141582DFA8578C1C931FA67D3E4C589 /* ZoomDefining.swift in Sources */,
+				D265A1FC38B8D5CC3EDCC3D9B27E15E5 /* ARCL-dummy.m in Sources */,
+				89778CBFCF592626E74862BE755424AB /* ARKit_CoreLocation.swift in Sources */,
+				4C7A856D2886BB3D6193B9E855CBEDB9 /* BaseTypes+Extensions.swift in Sources */,
+				F345B16DEDDB684382A01B74A1E60ED6 /* CGPoint+Extensions.swift in Sources */,
+				550CC16648B06D71D319B4D2E7130023 /* CLLocation+Extensions.swift in Sources */,
+				867CD5833D0419FF267206035AD1A6F3 /* FloatingPoint+Radians.swift in Sources */,
+				F9739A29FE877BB05F52B0C05C55499D /* LocationAnnotationNode.swift in Sources */,
+				EB1CA2AC9D41A6562C4C605BE6EB529E /* LocationManager.swift in Sources */,
+				8310F54A255186528B874F64A1F45600 /* LocationNode.swift in Sources */,
+				7DE0A69D337B91E2169CF13DF0891FD9 /* PolylineNode.swift in Sources */,
+				3129409B6767535BC0DD01301A7BBAEC /* ScalingScheme.swift in Sources */,
+				C3B75CF7F32EE3302F2ED7123902B27A /* SceneLocationEstimate+Extensions.swift in Sources */,
+				ED34AB2D1783C9C8BC11424EB855923B /* SceneLocationEstimate.swift in Sources */,
+				17A566507509FDA3A7FA23FC0305A151 /* SceneLocationManager.swift in Sources */,
+				ED9E52069F67212D54476DE96B4F6B6A /* SceneLocationView+ARSCNViewDelegate.swift in Sources */,
+				069043A53F3F6FE754683A46F1E0DAA7 /* SceneLocationView.swift in Sources */,
+				BA1192585DD42183DF8BC16C4F70DDCC /* SceneLocationViewEstimateDelegate.swift in Sources */,
+				4074BC67A80281834A19047ADC89B250 /* SCNNode+Extensions.swift in Sources */,
+				279F012AF3B2C726F798068BCF2F9A57 /* SCNVector3+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECEC42C3A768A20ADFB54D0BA482D9BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43873DD799E170FA97B8D73F449FA7AD /* Pods-ARKit+CoreLocation-ARCLTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3B62FBFAC87EA780E856DBFA3580A45A /* PBXTargetDependency */ = {
+		1119D2437B7B428FFF6911CF1408B2DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ARCL;
-			target = 3568851C91A5B933C59071F1CA3C2315 /* ARCL */;
-			targetProxy = 2432F72FC317BB8EF8CA813EA4FAAD91 /* PBXContainerItemProxy */;
+			target = BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */;
+			targetProxy = B0E6C7952F77CAC06C495C828E40B3CD /* PBXContainerItemProxy */;
 		};
-		AB44E697AF409C008985B2E1ACAA74D5 /* PBXTargetDependency */ = {
+		5DBEE62FDDA8AAEA6BC51B67EE277C2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GeoTrackKit;
-			target = AAF625B221F9718DFD19AB30D5C05A51 /* GeoTrackKit */;
-			targetProxy = 61AC7E7D30A215E00F6775F321ABEAF1 /* PBXContainerItemProxy */;
+			target = 4E1F0A83DA8B9DC95EB479D88999BE67 /* GeoTrackKit */;
+			targetProxy = BBBC37878E5005CE515E2BDA1FAABF3A /* PBXContainerItemProxy */;
+		};
+		722996F684C20CF54FD6E88C8095A07C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GeoTrackKit;
+			target = 4E1F0A83DA8B9DC95EB479D88999BE67 /* GeoTrackKit */;
+			targetProxy = 170ADFC4B9BDF55CB06ED26105535477 /* PBXContainerItemProxy */;
+		};
+		F53191D83F7BAAE3CE126B8AFF9D6254 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ARCL;
+			target = BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */;
+			targetProxy = EE98663D9EFF396BEA2FF55200C9A04C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		241CD8B189D1C434E29987611980B5DD /* Debug */ = {
+		00FA133A92BAFF0FEDB7D55C55CEB907 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54BF33596D2F47F9360A5D182FD36494 /* ARCL.xcconfig */;
+			baseConfigurationReference = 28293E6EA34609EA1E49FF98627D765B /* Pods-ARKit+CoreLocation-ARCLTests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ARCL/ARCL-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ARCL/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ARCL/ARCL.modulemap";
-				PRODUCT_NAME = ARCL;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6BC9E6A6663B45412CC781B5B63A7FEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49AF8AA326E76711FB29567A31A81D88 /* Pods-ARKit+CoreLocation.release.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -657,17 +737,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation-ARCLTests/Pods-ARKit+CoreLocation-ARCLTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-ARKit+CoreLocation-ARCLTests/Pods-ARKit+CoreLocation-ARCLTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ARKit_CoreLocation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -677,7 +757,41 @@
 			};
 			name = Release;
 		};
-		9CBE43BEF079F20EF85ABF6900142B11 /* Release */ = {
+		0AE92F82ABB64DA3B530DD5C96A18DC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80FA0EF9C5661A429F4CA47FA26E4831 /* GeoTrackKit.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GeoTrackKit/GeoTrackKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GeoTrackKit/GeoTrackKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GeoTrackKit/GeoTrackKit.modulemap";
+				PRODUCT_MODULE_NAME = GeoTrackKit;
+				PRODUCT_NAME = GeoTrackKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -709,7 +823,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -730,19 +843,20 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		B0E30372A37786223DF0FEA087EB79A2 /* Release */ = {
+		60A2FAB557EA5DF9BB5B083C48E50A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31008223054A38C53258039BD66044B9 /* GeoTrackKit.xcconfig */;
+			baseConfigurationReference = 80FA0EF9C5661A429F4CA47FA26E4831 /* GeoTrackKit.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -753,42 +867,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/GeoTrackKit/GeoTrackKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeoTrackKit/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/GeoTrackKit/GeoTrackKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GeoTrackKit/GeoTrackKit.modulemap";
-				PRODUCT_NAME = GeoTrackKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C6F9BE95B68F43B3091AFCF2AEFC75F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31008223054A38C53258039BD66044B9 /* GeoTrackKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GeoTrackKit/GeoTrackKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeoTrackKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GeoTrackKit/GeoTrackKit.modulemap";
+				PRODUCT_MODULE_NAME = GeoTrackKit;
 				PRODUCT_NAME = GeoTrackKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -800,10 +884,12 @@
 			};
 			name = Debug;
 		};
-		CE87D11137F1E029113119C7DAF2C5A4 /* Debug */ = {
+		630AAB658206B3072E0C2C8F9862F0FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1E347CEEE5468A8FD669A4FA76E22E9 /* Pods-ARKit+CoreLocation.debug.xcconfig */;
+			baseConfigurationReference = 20C6D6029114C4D03DC4E22109192048 /* Pods-ARKit+CoreLocation.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -814,7 +900,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -824,7 +910,43 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ARKit_CoreLocation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6F58289843E73D6B1AE48140383C856B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A85E959CC4024E7189BE71AFE46D84 /* Pods-ARKit+CoreLocation.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,10 +955,47 @@
 			};
 			name = Debug;
 		};
-		F9B8CF67B2126011AC538046843F048B /* Release */ = {
+		9BE78D026A7351E556AF5B053A473B4B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54BF33596D2F47F9360A5D182FD36494 /* ARCL.xcconfig */;
+			baseConfigurationReference = BA858F72F0ADE4D151F82789F511D742 /* Pods-ARKit+CoreLocation-ARCLTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ARKit+CoreLocation-ARCLTests/Pods-ARKit+CoreLocation-ARCLTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ARKit+CoreLocation-ARCLTests/Pods-ARKit+CoreLocation-ARCLTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCA317F0ADE4298CB4D33D1C6094223E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DADEF96DDDD623F8AE6C23F9D799D41F /* ARCL.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -847,16 +1006,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/ARCL/ARCL-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ARCL/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/ARCL/ARCL-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ARCL/ARCL.modulemap";
+				PRODUCT_MODULE_NAME = ARCL;
 				PRODUCT_NAME = ARCL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -864,7 +1024,7 @@
 			};
 			name = Release;
 		};
-		FE4017C6988784A274FF93B4FF612EC6 /* Debug */ = {
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -896,7 +1056,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -921,55 +1080,96 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F90CD79060ECD0040DB636AFD7AB7FF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DADEF96DDDD623F8AE6C23F9D799D41F /* ARCL.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ARCL/ARCL-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARCL/ARCL-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ARCL/ARCL.modulemap";
+				PRODUCT_MODULE_NAME = ARCL;
+				PRODUCT_NAME = ARCL;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0199A4A2C425079BFCD013A7E0964F52 /* Build configuration list for PBXNativeTarget "GeoTrackKit" */ = {
+		21CDA4F9C2B7CD47659EE300D11D436A /* Build configuration list for PBXNativeTarget "GeoTrackKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6F9BE95B68F43B3091AFCF2AEFC75F6 /* Debug */,
-				B0E30372A37786223DF0FEA087EB79A2 /* Release */,
+				60A2FAB557EA5DF9BB5B083C48E50A70 /* Debug */,
+				0AE92F82ABB64DA3B530DD5C96A18DC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		031734D177D1141320B0ED490AE26240 /* Build configuration list for PBXNativeTarget "ARCL" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				241CD8B189D1C434E29987611980B5DD /* Debug */,
-				F9B8CF67B2126011AC538046843F048B /* Release */,
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C177062EE11A5FACE65BFD4A8DF907B /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation" */ = {
+		A3ADA08306546DA207812F2C1BFC474D /* Build configuration list for PBXNativeTarget "ARCL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE87D11137F1E029113119C7DAF2C5A4 /* Debug */,
-				6BC9E6A6663B45412CC781B5B63A7FEA /* Release */,
+				F90CD79060ECD0040DB636AFD7AB7FF1 /* Debug */,
+				CCA317F0ADE4298CB4D33D1C6094223E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		A3CB512161BF1283C5BAD4E5E72C2DB9 /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation-ARCLTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE4017C6988784A274FF93B4FF612EC6 /* Debug */,
-				9CBE43BEF079F20EF85ABF6900142B11 /* Release */,
+				9BE78D026A7351E556AF5B053A473B4B /* Debug */,
+				00FA133A92BAFF0FEDB7D55C55CEB907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4C06135FF08ED1BC1043301ABDD143E /* Build configuration list for PBXNativeTarget "Pods-ARKit+CoreLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F58289843E73D6B1AE48140383C856B /* Debug */,
+				630AAB658206B3072E0C2C8F9862F0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
