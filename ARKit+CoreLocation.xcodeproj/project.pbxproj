@@ -13,6 +13,7 @@
 		3643DAEB221E30C6002BEAFC /* UIButton+Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643DAEA221E30C6002BEAFC /* UIButton+Designable.swift */; };
 		3643DAED221E3390002BEAFC /* OpenARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643DAEC221E3390002BEAFC /* OpenARCell.swift */; };
 		3643DAEF221E3840002BEAFC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643DAEE221E3840002BEAFC /* LocationCell.swift */; };
+		3656971422D2881600555879 /* StatesDemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656971322D2881600555879 /* StatesDemoData.swift */; };
 		369336F3221B4B730097D8FA /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */; };
 		36B3F34B221D077700745096 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3F34A221D077700745096 /* SettingsViewController.swift */; };
 		36D99E3222BFEA2E00D09952 /* POIViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D99E3122BFEA2E00D09952 /* POIViewController+ARSCNViewDelegate.swift */; };
@@ -41,6 +42,7 @@
 		3643DAEA221E30C6002BEAFC /* UIButton+Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Designable.swift"; sourceTree = "<group>"; };
 		3643DAEC221E3390002BEAFC /* OpenARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenARCell.swift; sourceTree = "<group>"; };
 		3643DAEE221E3840002BEAFC /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		3656971322D2881600555879 /* StatesDemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesDemoData.swift; sourceTree = "<group>"; };
 		36A77FB922BFD9B000AAE2A5 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		36A77FBA22BFD9B000AAE2A5 /* changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = changelog.md; sourceTree = "<group>"; };
 		36A77FBB22BFD9B000AAE2A5 /* readme.jp.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.jp.md; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 				3643DAEA221E30C6002BEAFC /* UIButton+Designable.swift */,
 				3643DAEC221E3390002BEAFC /* OpenARCell.swift */,
 				3643DAEE221E3840002BEAFC /* LocationCell.swift */,
-				36D99E3122BFEA2E00D09952 /* POIViewController+ARSCNViewDelegate.swift */,
+				3656971322D2881600555879 /* StatesDemoData.swift */,
 			);
 			path = "ARKit+CoreLocation";
 			sourceTree = "<group>";
@@ -381,7 +383,7 @@
 				3643DAED221E3390002BEAFC /* OpenARCell.swift in Sources */,
 				3643DAEF221E3840002BEAFC /* LocationCell.swift in Sources */,
 				3643DAEB221E30C6002BEAFC /* UIButton+Designable.swift in Sources */,
-				36D99E3222BFEA2E00D09952 /* POIViewController+ARSCNViewDelegate.swift in Sources */,
+				3656971422D2881600555879 /* StatesDemoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +541,7 @@
 			baseConfigurationReference = 8C31ACA439BC114F28F96BDD /* Pods-ARKit+CoreLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 268S5GJFWZ;
 				INFOPLIST_FILE = "ARKit+CoreLocation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maaap.ProjectDent.ARKit-CoreLocation";
@@ -554,7 +556,7 @@
 			baseConfigurationReference = CED01C5C93D16CD7C03711E5 /* Pods-ARKit+CoreLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 268S5GJFWZ;
 				INFOPLIST_FILE = "ARKit+CoreLocation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maaap.ProjectDent.ARKit-CoreLocation";

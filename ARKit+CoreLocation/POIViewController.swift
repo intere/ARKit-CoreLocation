@@ -70,7 +70,7 @@ class POIViewController: UIViewController {
         sceneLocationView.showFeaturePoints = displayDebugging
 
 //        sceneLocationView.delegate = self // Causes an assertionFailure - use the `arViewDelegate` instead:
-        sceneLocationView.arViewDelegate = self
+//        sceneLocationView.arViewDelegate = self
 
         // Now add the route or location annotations as appropriate
         addSceneModels()
@@ -181,38 +181,15 @@ extension POIViewController {
     /// and when a location is finally discovered, the models are added.
     func addSceneModels() {
         // 1. Don't try to add the models to the scene until we have a current location
-        guard sceneLocationView.sceneLocationManager.currentLocation != nil else {
+        guard let currentLocation = sceneLocationView.sceneLocationManager.currentLocation else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.addSceneModels()
             }
             return
         }
 
-        let box = SCNBox(width: 1, height: 0.2, length: 5, chamferRadius: 0.25)
-        box.firstMaterial?.diffuse.contents = UIColor.gray.withAlphaComponent(0.5)
-
-        // 2. If there is a route, show that
-        if let routes = routes {
-            sceneLocationView.addRoutes(routes: routes) { distance -> SCNBox in
-                let box = SCNBox(width: 1.75, height: 0.5, length: distance, chamferRadius: 0.25)
-
-//                // Option 1: An absolutely terrible box material set (that demonstrates what you can do):
-//                box.materials = ["box0", "box1", "box2", "box3", "box4", "box5"].map {
-//                    let material = SCNMaterial()
-//                    material.diffuse.contents = UIImage(named: $0)
-//                    return material
-//                }
-
-                // Option 2: Something more typical
-                box.firstMaterial?.diffuse.contents = UIColor.blue.withAlphaComponent(0.7)
-                return box
-            }
-        } else {
-            // 3. If not, then show the
-            buildDemoData().forEach {
-                sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: $0)
-            }
-        }
+        // Add all of the states to the scene, 2 meters higher than the current elevation.
+        USState.addAll(to: sceneLocationView, withElevation: currentLocation.altitude + 2)
     }
 
     /// Builds the location annotations for a few random objects, scattered across the country
