@@ -73,15 +73,15 @@ private extension MKMapItem {
         if let name = name {
             result += name
         }
-        if let addressDictionary = placemark.addressDictionary {
-            if let street = addressDictionary["Street"] as? String {
-                result += "\n\(street)"
-            }
-            if let city = addressDictionary["City"] as? String,
-                let state = addressDictionary["State"] as? String,
-                let zip = addressDictionary["ZIP"] as? String {
-                result += "\n\(city), \(state) \(zip)"
-            }
+        if let street = placemark.thoroughfare {
+            result += "\n\(street)"
+        }
+        if
+            let city = placemark.locality,
+            let state = placemark.administrativeArea,
+            let zip = placemark.postalCode,
+            let country = placemark.country {
+            result += String(format: "\n%@, %@ %@ \n%@", city, state, zip, country)
         } else if let location = placemark.location {
             result += "\n\(location.coordinate)"
         }
