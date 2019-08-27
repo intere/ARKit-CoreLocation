@@ -1,4 +1,6 @@
 # Changelog
+- 1.2.2
+    - Update `MapKit` extension's `titleLabelText` syntax.
 - 1.2.1
     - [PR #207 - Addresses Issue #136 - ARCL lacks CI ](https://github.com/ProjectDent/ARKit-CoreLocation/pull/207)
     - [PR #209 - Updates polyline position/scale when GPS location is updated](https://github.com/ProjectDent/ARKit-CoreLocation/pull/209)
