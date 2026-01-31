@@ -9,7 +9,7 @@
 import XCTest
 import CoreLocation
 
-@testable import ARCL
+@testable import ARKit_CoreLocation
 
 /// Test `coordinateWithBearing(bearing:distanceMeters)` for 4 different latitudes (85, 47.6, 5, -47.6),
 /// 8 different bearings (every 45 degrees starting at 0),

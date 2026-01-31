@@ -11,12 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "ARCL",
-            targets: ["ARCL"]
+            targets: ["ARKit-CoreLocation"]
         )
     ],
     targets: [
         .target(
-            name: "ARCL",
+            name: "ARKit-CoreLocation",
             dependencies: [],
             path: "Sources/ARKit-CoreLocation",
             swiftSettings: [
@@ -25,7 +25,7 @@ let package = Package(
         ),
         .testTarget(
             name: "ARCLTests",
-            dependencies: ["ARCL"],
+            dependencies: ["ARKit-CoreLocation"],
             path: "ARCLTests"
         )
     ],
