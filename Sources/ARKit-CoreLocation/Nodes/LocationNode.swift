@@ -35,8 +35,9 @@ open class AnnotationNode: SCNNode {
 /// layout purposes.  To adjust the scale and position of items within a node,
 /// you can add them to a child node and adjust them there
 open class LocationNode: SCNNode {
-    // FIXME: figure out why this is hardcoded and why it would ever be different from the scene's sitting?
-    /// This seems like it should be a bug? Why is it hardcoded? Why would it ever be different from the scene's setting?
+    /// The method used for determining location estimates for this node.
+    /// This is automatically synchronized with the SceneLocationView's `locationEstimateMethod`
+    /// when nodes are added to the scene.
     var locationEstimateMethod: LocationEstimateMethod = .mostRelevantEstimate
 
     /// Location can be changed and confirmed later by SceneLocationView.
@@ -143,9 +144,9 @@ open class LocationNode: SCNNode {
                 self.scale = SCNVector3(x: 1, y: 1, z: 1)
             }
         } else {
-            //Calculates distance based on the distance within the scene, as the location isn't yet confirmed
-            //TODO: This yields zero, perhaps we should investigate
-            adjustedDistance = Double(position.distance(to: position))
+            // Calculates distance based on the distance within the scene, as the location isn't yet confirmed
+            // Uses the node's current position relative to the given scene position
+            adjustedDistance = Double(self.position.distance(to: position))
 
             scale = SCNVector3(x: 1, y: 1, z: 1)
         }

@@ -12,8 +12,6 @@ import CoreLocation
 import MapKit
 
 //Should conform to delegate here, add in future commit
-@available(iOS 11.0, *)
-
 /// `SceneLocationView` is the `ARSCNView` subclass used to render an ARCL scene.
 ///
 /// Note that all of the standard SceneKit/ARKit delegates and delegate methods are used
@@ -185,7 +183,6 @@ open class SceneLocationView: ARSCNView {
     }
 }
 
-@available(iOS 11.0, *)
 public extension SceneLocationView {
 
     func run() {
@@ -341,7 +338,115 @@ public extension SceneLocationView {
     }
 }
 
-@available(iOS 11.0, *)
+// MARK: - Result-based API (Modern Error Handling)
+
+public extension SceneLocationView {
+
+    /// Adds a location node at the current position with explicit error handling.
+    ///
+    /// - Parameter locationNode: The node to add.
+    /// - Returns: A Result indicating success or containing an error explaining why the node couldn't be added.
+    @discardableResult
+    func addLocationNodeForCurrentPositionWithResult(locationNode: LocationNode) -> NodeAddResult {
+        guard let currentPosition = currentScenePosition else {
+            return .failure(.scenePositionUnavailable)
+        }
+        guard let currentLocation = sceneLocationManager.currentLocation else {
+            return .failure(.locationUnavailable)
+        }
+        guard let sceneNode = sceneNode else {
+            return .failure(.sceneNodeUnavailable)
+        }
+
+        locationNode.location = currentLocation
+        locationNode.position = currentPosition
+
+        locationNodes.append(locationNode)
+        sceneNode.addChildNode(locationNode)
+
+        return .success(())
+    }
+
+    /// Adds a location node with a confirmed location with explicit error handling.
+    ///
+    /// - Parameter locationNode: The node to add (must have location set and confirmed).
+    /// - Returns: A Result indicating success or containing an error explaining why the node couldn't be added.
+    @discardableResult
+    func addLocationNodeWithConfirmedLocationWithResult(locationNode: LocationNode) -> NodeAddResult {
+        guard locationNode.location != nil else {
+            return .failure(.nodeLocationNil)
+        }
+        guard locationNode.locationConfirmed else {
+            return .failure(.nodeLocationNotConfirmed)
+        }
+
+        let locationNodeLocation = locationOfLocationNode(locationNode)
+
+        locationNode.updatePositionAndScale(setup: true,
+                                            scenePosition: currentScenePosition,
+                                            locationNodeLocation: locationNodeLocation,
+                                            locationManager: sceneLocationManager) {
+            self.locationViewDelegate?
+                .didUpdateLocationAndScaleOfLocationNode(sceneLocationView: self, locationNode: locationNode)
+        }
+
+        locationNodes.append(locationNode)
+        sceneNode?.addChildNode(locationNode)
+
+        return .success(())
+    }
+
+    /// Adds routes to the scene with explicit error handling.
+    ///
+    /// - Parameters:
+    ///   - routes: The MKRoute of directions.
+    ///   - boxBuilder: A block that will customize how a box is built.
+    /// - Returns: A Result indicating success or containing an error.
+    @discardableResult
+    func addRoutesWithResult(routes: [MKRoute], boxBuilder: BoxBuilder? = nil) -> NodeAddResult {
+        let polylines = routes.map { AttributedType(type: $0.polyline, attribute: $0.name) }
+        return addRoutesWithResult(polylines: polylines, boxBuilder: boxBuilder)
+    }
+
+    /// Adds polylines to the scene with explicit error handling.
+    ///
+    /// - Parameters:
+    ///   - polylines: The list of attributed MKPolyline to render.
+    ///   - Δaltitude: Difference between box and current user altitude.
+    ///   - boxBuilder: A block that will customize how a box is built.
+    /// - Returns: A Result indicating success or containing an error.
+    @discardableResult
+    func addRoutesWithResult(polylines: [AttributedType<MKPolyline>],
+                             Δaltitude: CLLocationDistance = -2.0,
+                             boxBuilder: BoxBuilder? = nil) -> NodeAddResult {
+        guard let altitude = sceneLocationManager.currentLocation?.altitude else {
+            return .failure(.altitudeUnavailable)
+        }
+
+        let polyNodes = polylines.map {
+            PolylineNode(polyline: $0.type,
+                         altitude: altitude + Δaltitude,
+                         tag: $0.attribute,
+                         boxBuilder: boxBuilder)
+        }
+
+        polylineNodes.append(contentsOf: polyNodes)
+        polyNodes.forEach {
+            $0.locationNodes.forEach { node in
+                let locationNodeLocation = self.locationOfLocationNode(node)
+                node.updatePositionAndScale(setup: true,
+                                            scenePosition: currentScenePosition,
+                                            locationNodeLocation: locationNodeLocation,
+                                            locationManager: sceneLocationManager,
+                                            onCompletion: {})
+                sceneNode?.addChildNode(node)
+            }
+        }
+
+        return .success(())
+    }
+}
+
 public extension SceneLocationView {
 
     /// Adds routes to the scene and lets you specify the geometry prototype for the box.
@@ -399,7 +504,6 @@ public extension SceneLocationView {
     }
 }
 
-@available(iOS 11.0, *)
 public extension SceneLocationView {
     /// Adds polylines to the scene and lets you specify the geometry prototype for the box.
     /// Note: You can provide your own SCNBox prototype to base the direction nodes from.
@@ -440,7 +544,6 @@ public extension SceneLocationView {
     }
 }
 
-@available(iOS 11.0, *)
 extension SceneLocationView: SceneLocationManagerDelegate {
     var scenePosition: SCNVector3? { return currentScenePosition }
 

@@ -8,8 +8,9 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
-protocol LocationManagerDelegate: class {
+protocol LocationManagerDelegate: AnyObject {
     func locationManagerDidUpdateLocation(_ locationManager: LocationManager,
                                           location: CLLocation)
     func locationManagerDidUpdateHeading(_ locationManager: LocationManager,
@@ -26,6 +27,12 @@ extension LocationManagerDelegate {
                                          accuracy: CLLocationDirection) { }
 }
 
+/// Represents heading information with direction and accuracy
+public struct HeadingUpdate {
+    public let direction: CLLocationDirection
+    public let accuracy: CLLocationDirection
+}
+
 /// Handles retrieving the location and heading from CoreLocation
 /// Does not contain anything related to ARKit or advanced location
 public class LocationManager: NSObject {
@@ -37,6 +44,70 @@ public class LocationManager: NSObject {
 
     private(set) public var heading: CLLocationDirection?
     private(set) public var headingAccuracy: CLLocationDirection?
+
+    // MARK: - Combine Publishers
+
+    /// Publisher that emits location updates
+    public let locationPublisher = PassthroughSubject<CLLocation, Never>()
+
+    /// Publisher that emits heading updates
+    public let headingPublisher = PassthroughSubject<HeadingUpdate, Never>()
+
+    /// Publisher that emits authorization status changes
+    public let authorizationPublisher = PassthroughSubject<CLAuthorizationStatus, Never>()
+
+    // MARK: - Async/Await Support
+
+    private var locationContinuations: [UUID: AsyncStream<CLLocation>.Continuation] = [:]
+    private var headingContinuations: [UUID: AsyncStream<HeadingUpdate>.Continuation] = [:]
+    private let continuationLock = NSLock()
+
+    /// An AsyncStream that yields location updates
+    /// Use this with Swift's async/await pattern: `for await location in locationManager.locations { ... }`
+    public var locations: AsyncStream<CLLocation> {
+        AsyncStream { continuation in
+            let id = UUID()
+            continuationLock.lock()
+            locationContinuations[id] = continuation
+            continuationLock.unlock()
+
+            continuation.onTermination = { [weak self] _ in
+                self?.continuationLock.lock()
+                self?.locationContinuations.removeValue(forKey: id)
+                self?.continuationLock.unlock()
+            }
+        }
+    }
+
+    /// An AsyncStream that yields heading updates
+    /// Use this with Swift's async/await pattern: `for await heading in locationManager.headings { ... }`
+    public var headings: AsyncStream<HeadingUpdate> {
+        AsyncStream { continuation in
+            let id = UUID()
+            continuationLock.lock()
+            headingContinuations[id] = continuation
+            continuationLock.unlock()
+
+            continuation.onTermination = { [weak self] _ in
+                self?.continuationLock.lock()
+                self?.headingContinuations.removeValue(forKey: id)
+                self?.continuationLock.unlock()
+            }
+        }
+    }
+
+    /// Waits for the next location update asynchronously
+    public func waitForNextLocation() async -> CLLocation? {
+        await withCheckedContinuation { continuation in
+            var cancellable: AnyCancellable?
+            cancellable = locationPublisher
+                .first()
+                .sink { location in
+                    continuation.resume(returning: location)
+                    cancellable?.cancel()
+                }
+        }
+    }
 
     override init() {
         super.init()
@@ -56,17 +127,19 @@ public class LocationManager: NSObject {
     }
 
     func requestAuthorization() {
-        if CLLocationManager.authorizationStatus() == .authorizedAlways ||
-            CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            return
-        }
+        guard let locationManager = locationManager else { return }
 
-        if CLLocationManager.authorizationStatus() == .denied ||
-            CLLocationManager.authorizationStatus() == .restricted {
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
             return
+        case .denied, .restricted:
+            return
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        @unknown default:
+            locationManager.requestWhenInUseAuthorization()
         }
-
-        locationManager?.requestWhenInUseAuthorization()
     }
 }
 
@@ -74,13 +147,19 @@ public class LocationManager: NSObject {
 
 extension LocationManager: CLLocationManagerDelegate {
 
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        authorizationPublisher.send(manager.authorizationStatus)
     }
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locations.forEach {
-            delegate?.locationManagerDidUpdateLocation(self, location: $0)
+        locations.forEach { location in
+            delegate?.locationManagerDidUpdateLocation(self, location: location)
+            locationPublisher.send(location)
+
+            // Yield to async streams
+            continuationLock.lock()
+            locationContinuations.values.forEach { $0.yield(location) }
+            continuationLock.unlock()
         }
 
         self.currentLocation = manager.location
@@ -90,7 +169,16 @@ extension LocationManager: CLLocationManagerDelegate {
         heading = newHeading.headingAccuracy >= 0 ? newHeading.trueHeading : newHeading.magneticHeading
         headingAccuracy = newHeading.headingAccuracy
 
-        delegate?.locationManagerDidUpdateHeading(self, heading: heading!, accuracy: newHeading.headingAccuracy)
+        if let heading = heading {
+            let update = HeadingUpdate(direction: heading, accuracy: newHeading.headingAccuracy)
+            delegate?.locationManagerDidUpdateHeading(self, heading: heading, accuracy: newHeading.headingAccuracy)
+            headingPublisher.send(update)
+
+            // Yield to async streams
+            continuationLock.lock()
+            headingContinuations.values.forEach { $0.yield(update) }
+            continuationLock.unlock()
+        }
     }
 
     public func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {

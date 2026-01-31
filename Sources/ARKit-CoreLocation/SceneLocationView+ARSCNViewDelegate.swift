@@ -10,10 +10,12 @@ import Foundation
 import ARKit
 import CoreLocation
 import MapKit
+import os.log
+
+private let logger = Logger(subsystem: "com.projectdent.ARCL", category: "SceneLocationView")
 
 // MARK: - ARSCNViewDelegate
 
-@available(iOS 11.0, *)
 extension SceneLocationView: ARSCNViewDelegate {
 
     public func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
@@ -40,14 +42,13 @@ extension SceneLocationView: ARSCNViewDelegate {
 
 // MARK: - ARSessionObserver
 
-@available(iOS 11.0, *)
 extension SceneLocationView {
 
     public func session(_ session: ARSession, didFailWithError error: Error) {
         defer {
             arViewDelegate?.session?(session, didFailWithError: error)
         }
-        print("session did fail with error: \(error)")
+        logger.error("Session did fail with error: \(error.localizedDescription)")
         sceneTrackingDelegate?.session(session, didFailWithError: error)
     }
 
@@ -57,19 +58,19 @@ extension SceneLocationView {
         }
         switch camera.trackingState {
         case .limited(.insufficientFeatures):
-            print("camera did change tracking state: limited, insufficient features")
+            logger.debug("Camera tracking state: limited (insufficient features)")
         case .limited(.excessiveMotion):
-            print("camera did change tracking state: limited, excessive motion")
+            logger.debug("Camera tracking state: limited (excessive motion)")
         case .limited(.initializing):
-            print("camera did change tracking state: limited, initializing")
+            logger.debug("Camera tracking state: limited (initializing)")
         case .normal:
-            print("camera did change tracking state: normal")
+            logger.debug("Camera tracking state: normal")
         case .notAvailable:
-            print("camera did change tracking state: not available")
+            logger.warning("Camera tracking state: not available")
         case .limited(.relocalizing):
-            print("camera did change tracking state: limited, relocalizing")
-        default:
-            print("camera did change tracking state: unknown...")
+            logger.debug("Camera tracking state: limited (relocalizing)")
+        @unknown default:
+            logger.warning("Camera tracking state: unknown")
         }
         sceneTrackingDelegate?.session(session, cameraDidChangeTrackingState: camera)
     }
@@ -78,7 +79,7 @@ extension SceneLocationView {
         defer {
             arViewDelegate?.sessionWasInterrupted?(session)
         }
-        print("session was interrupted")
+        logger.info("Session was interrupted")
         sceneTrackingDelegate?.sessionWasInterrupted(session)
     }
 
@@ -86,11 +87,10 @@ extension SceneLocationView {
         defer {
             arViewDelegate?.sessionInterruptionEnded?(session)
         }
-        print("session interruption ended")
+        logger.info("Session interruption ended")
         sceneTrackingDelegate?.sessionInterruptionEnded(session)
     }
 
-    @available(iOS 11.3, *)
     public func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
         return arViewDelegate?.sessionShouldAttemptRelocalization?(session) ?? true
     }
@@ -103,7 +103,6 @@ extension SceneLocationView {
 
 // MARK: - SCNSceneRendererDelegate
 
-@available(iOS 11.0, *)
 extension SceneLocationView {
 
     public func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {

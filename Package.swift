@@ -1,16 +1,33 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "ARCL",
-    platforms: [ .iOS(.v9) ],
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(name: "ARCL", targets: ["ARKit-CoreLocation"])
+        .library(
+            name: "ARCL",
+            targets: ["ARCL"]
+        )
     ],
     targets: [
-        .target(name: "ARKit-CoreLocation", dependencies: [])
-    ]
+        .target(
+            name: "ARCL",
+            dependencies: [],
+            path: "Sources/ARKit-CoreLocation",
+            swiftSettings: [
+                .enableUpcomingFeature("StrictConcurrency")
+            ]
+        ),
+        .testTarget(
+            name: "ARCLTests",
+            dependencies: ["ARCL"],
+            path: "ARCLTests"
+        )
+    ],
+    swiftLanguageVersions: [.v5]
 )

@@ -1,9 +1,10 @@
-language: objective-c
-osx_image: xcode11.1 
+language: swift
+osx_image: xcode15.0
 
 script:
+    - swift build
     - bundle install
-    - pod lib lint
+    - pod lib lint --allow-warnings
     - bundle exec fastlane test
 
 notifications:

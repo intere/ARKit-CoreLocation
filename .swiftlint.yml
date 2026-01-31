@@ -5,11 +5,18 @@ file_length:
   error: 1200
 
 disabled_rules:
-  - variable_name
+  - identifier_name
   - todo
-  - valid_docs
+
+opt_in_rules:
+  - empty_count
+  - closure_spacing
+  - explicit_init
+  - first_where
+  - sorted_first_last
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
   - ARCLTests
+  - .build
